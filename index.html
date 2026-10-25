@@ -1,68 +1,89 @@
-<!-- REEMPLAZA TODO TU BLOQUE DE "Pelisplusgo Template - Edición Completa" POR ESTO: -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pelisplusgo Store - By Mendez</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#080a12;color:#fff;font-family:Inter, sans-serif;padding:40px 20px}
+h1{text-align:center;font-size:36px;font-weight:900;margin-bottom:8px}
+.sub{text-align:center;color:#8b93a8;font-size:14px;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1200px;margin:0 auto}
+.card{background:#11182c;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden}
+.card.featured{border:1.5px solid #5effff;box-shadow:0 0 25px rgba(94,255,255,0.15)}
+.badge-top{background:#5effff;color:#070a15;text-align:center;padding:6px;font-size:11px;font-weight:900;letter-spacing:0.5px}
+.thumb{height:380px;background:#0d1326;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.info{padding:20px}
+.tags{display:flex;gap:6px;margin-bottom:10px}
+.tag{font-size:10px;font-weight:800;padding:4px 8px;border-radius:6px;background:rgba(255,255,255,0.07);color:#aab2c8}
+.tag.cyan{background:rgba(94,255,255,0.15);color:#5effff}
+.tag.purple{background:rgba(139,92,246,0.2);color:#a78bfa}
+.info h3{font-size:18px;font-weight:800;margin-bottom:6px}
+.info p{font-size:12.5px;color:#8b93a8;line-height:1.5;margin-bottom:14px}
+.features{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.features span{font-size:11px;color:#aab2c8;background:rgba(255,255,255,0.05);padding:4px 8px;border-radius:20px}
+.footer{display:flex;justify-content:space-between;align-items:center}
+.price{font-size:24px;font-weight:900;color:#5effff}
+.price small{display:block;font-size:10px;color:#6b7288;font-weight:400}
+.btn{background:#5effff;color:#070a15;border:none;padding:10px 18px;border-radius:10px;font-weight:800;cursor:pointer}
+.btn2{background:#fff;color:#000;border:none;padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer;margin-right:6px}
+</style>
+</head>
+<body>
 
-<div class="section">
-<h2 style="font-size:42px;font-weight:900;text-align:center;">Elige tu Plantilla</h2>
-<p class="sub" style="text-align:center;color:#8b93a8;margin:12px 0 40px">3 diseños diferentes, compra única para siempre</p>
+<h1>Elige tu Plantilla</h1>
+<p class="sub">3 productos diferentes, no son suscripciones. Pago único para siempre.</p>
 
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1300px;margin:0 auto">
+<div class="grid">
 
-<!-- PLANTILLA 1 -->
-<div style="background:#11182c;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden">
-<div style="height:220px;background:#0d1326;display:grid;place-items:center">
-<img src="app.jpg" style="height:90%;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.5)">
-</div>
-<div style="padding:20px">
-<div style="display:flex;gap:6px;margin-bottom:10px"><span style="background:rgba(94,255,255,0.15);color:#5effff;padding:4px 8px;border-radius:6px;font-size:10px;font-weight:800">REACT NATIVE</span><span style="background:rgba(255,255,255,0.06);padding:4px 8px;border-radius:6px;font-size:10px">FIGMA</span></div>
-<h3 style="font-size:18px;font-weight:800">Pelisplusgo Lite</h3>
-<p style="color:#8b93a8;font-size:12px;margin:8px 0 14px;line-height:1.5">Perfecta para empezar. 20 pantallas, diseño Netflix, player básico.</p>
-<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px">
-<span style="font-size:11px;color:#aab2c8">• 20 Pantallas</span><span style="font-size:11px;color:#aab2c8">• Player HD</span><span style="font-size:11px;color:#aab2c8">• Buscador</span>
-</div>
-<div style="display:flex;justify-content:space-between;align-items:center">
-<div><div style="font-size:24px;font-weight:900;color:#5effff">$15</div><div style="font-size:10px;color:#6b7288">Pago único</div></div>
-<button style="background:#5effff;color:#070a15;border:none;padding:10px 18px;border-radius:10px;font-weight:800;cursor:pointer">Comprar</button>
-</div>
-</div>
-</div>
-
-<!-- PLANTILLA 2 - DESTACADA -->
-<div style="background:#11182c;border:1px solid #5effff;border-radius:18px;overflow:hidden;transform:scale(1.02);box-shadow:0 0 30px rgba(94,255,255,0.15)">
-<div style="background:#5effff;color:#070a15;text-align:center;padding:6px;font-size:11px;font-weight:900">★ MÁS VENDIDA</div>
-<div style="height:220px;background:#0d1326;display:grid;place-items:center">
-<img src="app.jpg" style="height:90%;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.5)">
-</div>
-<div style="padding:20px">
-<div style="display:flex;gap:6px;margin-bottom:10px"><span style="background:rgba(94,255,255,0.15);color:#5effff;padding:4px 8px;border-radius:6px;font-size:10px;font-weight:800">FLUTTER + REACT</span><span style="background:rgba(255,255,255,0.06);padding:4px 8px;border-radius:6px;font-size:10px">ADMIN</span></div>
-<h3 style="font-size:18px;font-weight:800">Pelisplusgo Pro</h3>
-<p style="color:#8b93a8;font-size:12px;margin:8px 0 14px;line-height:1.5">La favorita. 40 pantallas, multi-perfiles, admin panel completo.</p>
-<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px">
-<span style="font-size:11px;color:#aab2c8">• 40 Pantallas</span><span style="font-size:11px;color:#aab2c8">• Admin Panel</span><span style="font-size:11px;color:#aab2c8">• Multi-perfil</span>
-</div>
-<div style="display:flex;justify-content:space-between;align-items:center">
-<div><div style="font-size:24px;font-weight:900;color:#5effff">$25</div><div style="font-size:10px;color:#6b7288">Pago único</div></div>
-<button style="background:#5effff;color:#070a15;border:none;padding:10px 18px;border-radius:10px;font-weight:800;cursor:pointer">Comprar</button>
-</div>
-</div>
-</div>
-
-<!-- PLANTILLA 3 -->
-<div style="background:#11182c;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden">
-<div style="height:220px;background:#0d1326;display:grid;place-items:center">
-<img src="app.jpg" style="height:90%;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.5)">
-</div>
-<div style="padding:20px">
-<div style="display:flex;gap:6px;margin-bottom:10px"><span style="background:rgba(139,92,246,0.2);color:#a78bfa;padding:4px 8px;border-radius:6px;font-size:10px;font-weight:800">PREMIUM</span><span style="background:rgba(255,255,255,0.06);padding:4px 8px;border-radius:6px;font-size:10px">LIVE TV</span></div>
-<h3 style="font-size:18px;font-weight:800">Pelisplusgo Cinema+</h3>
-<p style="color:#8b93a8;font-size:12px;margin:8px 0 14px;line-height:1.5">Todo incluido. 60+ pantallas, Live TV, Chromecast, Super Admin.</p>
-<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px">
-<span style="font-size:11px;color:#aab2c8">• 60+ Pantallas</span><span style="font-size:11px;color:#aab2c8">• Live TV</span><span style="font-size:11px;color:#aab2c8">• Chromecast</span>
-</div>
-<div style="display:flex;justify-content:space-between;align-items:center">
-<div><div style="font-size:24px;font-weight:900;color:#5effff">$35</div><div style="font-size:10px;color:#6b7288">Pago único</div></div>
-<button style="background:#5effff;color:#070a15;border:none;padding:10px 18px;border-radius:10px;font-weight:800;cursor:pointer">Comprar</button>
+<!-- LITE -->
+<div class="card">
+<div class="thumb"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600" alt=""></div>
+<div class="info">
+<div class="tags"><span class="tag cyan">REACT NATIVE</span><span class="tag">FIGMA</span></div>
+<h3>Pelisplusgo Lite</h3>
+<p>Perfecta para empezar tu app de películas. Diseño limpio tipo Netflix.</p>
+<div class="features"><span>20 Pantallas</span><span>Player HD</span><span>Buscador</span></div>
+<div class="footer">
+<div><div class="price">$15 <small>Pago único</small></div></div>
+<div><button class="btn2">Ver Demo</button><button class="btn">Comprar</button></div>
 </div>
 </div>
 </div>
 
+<!-- PRO DESTACADA -->
+<div class="card featured">
+<div class="badge-top">★ MÁS VENDIDA</div>
+<div class="thumb"><img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600" alt=""></div>
+<div class="info">
+<div class="tags"><span class="tag cyan">FLUTTER + REACT</span><span class="tag">ADMIN PANEL</span></div>
+<h3>Pelisplusgo Pro</h3>
+<p>La más completa y vendida. Con panel de administrador y multi-perfiles.</p>
+<div class="features"><span>40 Pantallas</span><span>Admin Panel</span><span>Multi-perfil</span></div>
+<div class="footer">
+<div><div class="price">$25 <small>Pago único</small></div></div>
+<div><button class="btn2">Ver Demo</button><button class="btn">Comprar</button></div>
 </div>
 </div>
+</div>
+
+<!-- CINEMA+ -->
+<div class="card">
+<div class="thumb"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600" alt=""></div>
+<div class="info">
+<div class="tags"><span class="tag purple">PREMIUM</span><span class="tag">LIVE TV</span></div>
+<h3>Pelisplusgo Cinema+</h3>
+<p>Todo incluido. Live TV, Chromecast y super admin para negocios.</p>
+<div class="features"><span>60+ Pantallas</span><span>Live TV</span><span>Chromecast</span></div>
+<div class="footer">
+<div><div class="price">$35 <small>Pago único</small></div></div>
+<div><button class="btn2">Ver Demo</button><button class="btn">Comprar</button></div>
+</div>
+</div>
+</div>
+
+</div>
+</body>
+</html>
