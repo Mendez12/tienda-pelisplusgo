@@ -8,50 +8,66 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden}
-.header{position:sticky;top:0;z-index:100;width:100vw;height:72px;display:flex;justify-content:space-between;align-items:center;padding:0 3%;background:rgba(10,14,28,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.07)}
+.header{
+  position:sticky;top:0;z-index:100;width:100vw;height:72px;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 3%; background:rgba(10,14,28,0.85);
+  backdrop-filter:blur(20px) saturate(180%);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
 .logo{font-weight:900;font-size:19px;display:flex;align-items:center;gap:12px}
 .logo-icon{width:38px;height:38px;background:linear-gradient(135deg,#5effff,#2ec4ff);color:#000;display:grid;place-items:center;border-radius:10px;font-weight:900}
 .nav-pill{display:flex;align-items:center;gap:2px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);padding:6px;border-radius:999px}
-.nav-pill a{color:#8b93a8;text-decoration:none;font-size:12.5px;font-weight:600;padding:8px 14px;border-radius:999px;transition:.2s}
+.nav-pill a{color:#8b93a8;text-decoration:none;font-size:12.5px;font-weight:600;padding:8px 13px;border-radius:999px;transition:.2s}
+.nav-pill a:hover{background:rgba(255,255,255,0.08);color:#fff}
 .nav-pill a.active{background:#fff;color:#000;font-weight:800}
 .btn-telegram{background:#fff;color:#000;padding:11px 22px;border-radius:999px;font-weight:900;font-size:13px;text-decoration:none}
 .hero{width:100vw;min-height:calc(100vh - 72px);display:grid;grid-template-columns:1fr 1fr;padding:0 5%;align-items:center;background:#070a15}
 .hero-left h1{font-size:64px;line-height:0.98;letter-spacing:-2px;font-weight:900}
-.hero-left p{color:#8b93a8;margin:22px 0;font-size:15px;max-width:620px}
+.hero-left p{color:#8b93a8;margin:22px 0;font-size:15px;line-height:1.7;max-width:620px}
 .btn-demo{background:#7af4f4;color:#070a15;padding:16px 28px;border-radius:12px;font-weight:900;font-size:14px;text-decoration:none;display:inline-block}
 .phone-wrap{display:flex;justify-content:center}
-.phone{width:440px;height:860px;background:#000;border-radius:48px;border:12px solid #1b2335;padding:7px}
+.phone{width:440px;height:860px;background:#000;border-radius:48px;border:12px solid #1b2335;padding:7px;box-shadow:0 40px 120px rgba(0,0,0,.9)}
 .phone img{width:100%;height:100%;object-fit:cover;border-radius:38px}
 .section{padding:90px 5%;background:#080c1a}
-.section h2{font-size:42px;font-weight:900;text-align:center}
-.sub{text-align:center;color:#6b7288;margin:14px 0 55px}
+.section h2{font-size:42px;font-weight:900;text-align:center;letter-spacing:-1px}
+.sub{text-align:center;color:#6b7288;font-size:15px;margin:14px 0 55px}
 .products{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:1280px;margin:0 auto}
 .pcard{background:#11182c;border:1px solid rgba(255,255,255,0.08);border-radius:20px;overflow:hidden;transition:.2s}
 .pcard:hover{transform:translateY(-4px);border-color:rgba(94,255,255,0.3)}
-.pcard.featured{border:1.5px solid #5effff}
+.pcard.featured{border:1.5px solid #5effff;transform:scale(1.03);box-shadow:0 0 50px rgba(94,255,255,0.15)}
 .pcard-badge{background:#5effff;color:#000;text-align:center;padding:7px;font-size:11px;font-weight:900}
-.pcard-icon{height:170px;display:grid;place-items:center;font-weight:900;color:#5effff;background:linear-gradient(135deg,#0f1a2e,#1a2a4a)}
+.pcard-icon{height:170px;display:grid;place-items:center;font-weight:900;letter-spacing:3px;font-size:14px;color:#5effff;background:radial-gradient(circle at top,rgba(94,255,255,0.18),transparent 70%),linear-gradient(135deg,#0f1a2e,#1a2a4a)}
 .pcard-info{padding:24px}
+.pcard-info h3{font-size:19px}
+.pcard-info p{color:#7b8399;font-size:13.5px;margin:10px 0 18px}
+.pfeat{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
 .pfeat span{font-size:11px;background:rgba(255,255,255,0.06);padding:6px 11px;border-radius:20px;color:#aab2c8}
-.pfooter{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+.pfooter{display:flex;justify-content:space-between;align-items:center}
 .btn-primary{background:#5effff;color:#000;padding:12px 20px;border-radius:10px;border:none;font-weight:900;font-size:13px;cursor:pointer}
 .modal{position:fixed;inset:0;background:rgba(3,6,14,0.92);backdrop-filter:blur(22px);z-index:999;display:none;place-items:center;padding:20px}
 .modal.active{display:grid}
-.modal-box{width:92vw;max-width:1280px;min-height:700px;background:#10182f;border-radius:24px;display:grid;grid-template-columns:1.35fr 0.65fr;overflow:hidden}
-.m-left{padding:20px;background:#0a0f20}
-.m-main{min-height:580px;background:#152040;border-radius:16px;display:grid;place-items:center;padding:16px}
-.m-main img{max-width:310px;max-height:560px;border-radius:16px;border:6px solid #1a233a}
-.m-right{padding:28px 36px;position:relative;display:flex;flex-direction:column}
-.close{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.12);cursor:pointer}
-.m-price{font-size:42px;font-weight:900;color:#5effff;margin:10px 0}
-.m-list{list-style:none}.m-list li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:13px}
-.m-buttons{display:grid;gap:12px;margin-top:22px}
-.m-buy{padding:18px;background:#5effff;color:#000;border-radius:12px;font-weight:900;text-decoration:none;display:grid;place-items:center}
-.m-demo{padding:18px;background:rgba(255,255,255,0.07);color:#fff;border:1px solid rgba(255,255,255,0.15);border-radius:12px;font-weight:900;text-decoration:none;display:grid;place-items:center}
+.modal-box{width:92vw;max-width:1280px;min-height:700px;background:#10182f;border:1px solid rgba(255,255,255,0.08);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1.35fr 0.65fr;box-shadow:0 40px 140px rgba(0,0,0,0.9)}
+.m-left{padding:20px;background:#0a0f20;display:grid;gap:14px;align-content:start}
+.m-main{width:100%;background:radial-gradient(circle at top,#152040,#080c14);border-radius:16px;border:1px solid rgba(255,255,255,0.08);display:flex;justify-content:center;align-items:center;min-height:580px;padding:16px}
+.m-main img{max-width:310px;max-height:560px;object-fit:contain;border-radius:16px;border:6px solid #1a233a}
+.m-thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.m-thumb{height:110px;border-radius:12px;background:#111a2f;border:1px solid rgba(255,255,255,0.08);overflow:hidden;cursor:pointer}
+.m-thumb img{width:100%;height:100%;object-fit:cover}
+.m-right{padding:28px 36px 36px;position:relative;display:flex;flex-direction:column}
+.close{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:#fff;cursor:pointer}
+.m-price{font-size:42px;font-weight:900;color:#5effff;margin:10px 0 14px}
+.m-desc{color:#8b93a8;font-size:14px;line-height:1.6;margin-bottom:16px}
+.m-list{list-style:none;width:100%}.m-list li{font-size:13.5px;color:#cbd5e1;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+.m-list li::before{content:"✓ ";color:#5effff;font-weight:900}
+.m-buttons{display:grid;gap:12px;width:100%;margin-top:22px}
+.m-buy{width:100%;padding:18px;background:#5effff;color:#000;border:none;border-radius:12px;font-weight:900;font-size:15px;cursor:pointer;text-decoration:none;display:grid;place-items:center;text-align:center}
+.m-demo{width:100%;padding:18px;background:rgba(255,255,255,0.07);color:#fff;border:1px solid rgba(255,255,255,0.15);border-radius:12px;font-weight:900;font-size:15px;cursor:pointer;text-decoration:none;display:grid;place-items:center}
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1200px;margin:0 auto}
 .feat-card{background:#11182c;border:1px solid rgba(255,255,255,0.08);padding:28px;border-radius:18px}
-.producto-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;max-width:1280px;margin:0 auto}
-@media(max-width:1100px){.hero{grid-template-columns:1fr}.products,.modal-box,.feat-grid{grid-template-columns:1fr}.nav-pill{font-size:10px}}
+.doc-step{display:flex;gap:18px;background:#10182f;padding:22px;border-radius:16px;border:1px solid rgba(255,255,255,0.06)}
+.producto-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;max-width:1280px;margin:0 auto}
+@media(max-width:1050px){.hero{grid-template-columns:1fr}.hero-left h1{font-size:38px}.phone{width:340px;height:680px}.products,.modal-box,.feat-grid{grid-template-columns:1fr}.nav-pill{display:none}}
 </style>
 </head>
 <body>
@@ -73,67 +89,73 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 <div class="hero">
 <div class="hero-left">
 <h1>La Plantilla de tu Propia App de Peliculas Tipo Netflix</h1>
-<p>Diseño premium glassmorphism listo para iOS y Android.</p>
-<a href="https://download1588.mediafire.com/afgl55qdk6fgW5IhN8SPsVzMmv97BUi2AT8qj_OJ2HTAUzY_vct6x6x2KZ6AKt5BD7B0wppyE-vdduGTaNhTvyV2EHV_QniKEI17ykuOzuyjeIOa2oIwAoEWW9MVcL6looIHD1hI6zPfifiGmsEtS6x3aFBjEUkaGluhL-WLiZ4/ue5va1ed48bf409/app2508910-7xlbh3+%281%29.apk" target="_blank" class="btn-demo">Ver Demo en Vivo</a>
+<p>Diseño premium y personalizable para lanzar tu app de streaming de películas. Código limpio, interfaz moderna con glassmorphism. Listo para iOS y Android — sin suscripciones, solo una compra única.</p>
+<div style="margin-top:30px"><a href="https://download1588.mediafire.com/afgl55qdk6fgW5IhN8SPsVzMmv97BUi2AT8qj_OJ2HTAUzY_vct6x6x2KZ6AKt5BD7B0wppyE-vdduGTaNhTvyV2EHV_QniKEI17ykuOzuyjeIOa2oIwAoEWW9MVcL6looIHD1hI6zPfifiGmsEtS6x3aFBjEUkaGluhL-WLiZ4/ue5va1ed48bf409/app2508910-7xlbh3+%281%29.apk" target="_blank" class="btn-demo">Ver Demo en Vivo</a></div>
 </div>
-<div class="phone-wrap"><div class="phone"><img src="app.jpg"></div></div>
+<div class="phone-wrap"><div class="phone"><img src="app.jpg" alt="Hope"></div></div>
 </div>
 
 <div class="section" id="plantillas">
 <h2>Elige tu Plantilla</h2>
-<p class="sub">Pago único, tuya para siempre.</p>
+<p class="sub">Pago único, tuya para siempre. Cada botón abre su detalle en la misma página.</p>
 <div class="products" id="plantillas-grid"></div>
 </div>
 
-<!-- NUEVA SECCION PRODUCTO -->
-<div class="section" id="producto" style="background:#070a15;border-top:1px solid rgba(255,255,255,0.06)">
+<!-- NUEVA SECCION PRODUCTO CON DISEÑO PREMIUM -->
+<div class="section" id="producto" style="background:#070a15;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)">
 <h2>Todos los Productos</h2>
-<p class="sub">Aquí se muestran todas tus plantillas. Agrega más y aparecen solas. <span style="color:#5effff">Total: <span id="total-productos">0</span> productos</span></p>
+<p class="sub">Catálogo completo. Aquí aparecerán todas las plantillas que agregues. Total: <b style="color:#5effff" id="total-productos">0</b> productos</p>
 <div class="producto-grid" id="producto-grid"></div>
-<div style="text-align:center;margin-top:40px">
-<div style="display:inline-block;background:rgba(94,255,255,0.1);border:1px dashed rgba(94,255,255,0.3);padding:18px 28px;border-radius:14px;color:#5effff;font-size:13px">
-💡 Para agregar una nueva: edita PRODUCTOS_DATA en el código y pon { nombre, precio, img }
-</div>
-</div>
 </div>
 
-<div class="section" id="caracteristicas">
+<div class="section" id="caracteristicas" style="background:#070a15">
 <h2>Hecho para competir con Netflix</h2>
+<p class="sub">No es una plantilla más. Es el mismo diseño que usan apps de $10k</p>
 <div class="feat-grid">
-<div class="feat-card"><h3 style="color:#5effff">✦ Glassmorphism UI</h3><p style="color:#8b93a8;font-size:13px">60fps como tu captura Hope.</p></div>
-<div class="feat-card"><h3 style="color:#5effff">▶ Player 4K HDR</h3><p style="color:#8b93a8;font-size:13px">PiP, Chromecast, offline.</p></div>
-<div class="feat-card"><h3 style="color:#5effff">👤 Multi-Perfiles</h3><p style="color:#8b93a8;font-size:13px">Alex, Sam, Mia.</p></div>
-<div class="feat-card"><h3 style="color:#5effff">📊 Admin Dashboard</h3><p style="color:#8b93a8;font-size:13px">Gráficas reales.</p></div>
-<div class="feat-card"><h3 style="color:#5effff">🎨 Diseño 100% Profesional</h3><p style="color:#8b93a8;font-size:13px">Calibrado como Netflix / Disney+.</p></div>
-<div class="feat-card"><h3 style="color:#5effff">🚀 Listo para Play Store</h3><p style="color:#8b93a8;font-size:13px">AAB listo.</p></div>
+<div class="feat-card"><h3 style="color:#5effff;margin-bottom:10px">✦ Glassmorphism UI</h3><p style="color:#8b93a8;font-size:13px;line-height:1.6">Efecto blur premium, modo oscuro total, animaciones 60fps como en tu captura de Hope. Tu app se ve cara.</p></div>
+<div class="feat-card"><h3 style="color:#5effff;margin-bottom:10px">▶ Player 4K HDR</h3><p style="color:#8b93a8;font-size:13px;line-height:1.6">Player con controles Netflix, PiP, velocidad 1x-2x, Chromecast y descarga offline para ver sin internet.</p></div>
+<div class="feat-card"><h3 style="color:#5effff;margin-bottom:10px">👤 Multi-Perfiles</h3><p style="color:#8b93a8;font-size:13px;line-height:1.6">Alex, Sam, Mia como en tu app. Watchlist, favoritos y continuar viendo sincronizado.</p></div>
+<div class="feat-card"><h3 style="color:#5effff;margin-bottom:10px">📊 Admin Dashboard</h3><p style="color:#8b93a8;font-size:13px;line-height:1.6">Ve las películas más vistas, usuarios activos, gráficas reales como en tu Pro. Control total.</p></div>
+<div class="feat-card"><h3 style="color:#5effff;margin-bottom:10px">🎨 Diseño 100% Profesional</h3><p style="color:#8b93a8;font-size:13px;line-height:1.6">Tipografía, espaciados, sombras y colores calibrados como Netflix / Disney+. No se ve plantilla barata, se ve app de millones.</p></div>
+<div class="feat-card"><h3 style="color:#5effff;margin-bottom:10px">🚀 Listo para Play Store</h3><p style="color:#8b93a8;font-size:13px;line-height:1.6">Código limpio, sin errores, AAB listo. Lo subes en 15 minutos y pasa la revisión de Google.</p></div>
 </div>
 </div>
 
-<div class="section" id="documentacion"><h2>Documentación en 3 pasos</h2><p class="sub">Figma → Conecta API → Sube a Play Store</p></div>
+<div class="section" id="documentacion" style="background:#080c1a">
+<h2>Documentación en 3 pasos</h2>
+<p class="sub">Te lo dejamos tan fácil que no necesitas ser programador</p>
+<div style="max-width:900px;margin:0 auto;display:grid;gap:18px">
+<div class="doc-step"><div style="background:#5effff;color:#000;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;font-weight:900;flex-shrink:0">1</div><div><b>Personaliza en Figma</b><p style="color:#8b93a8;font-size:13px;margin-top:6px">Abre el .fig, cambia logo, colores, nombre Pelisplusgo Store por el tuyo. Exporta en 1 click. Video de 4 min incluido.</p></div></div>
+<div class="doc-step"><div style="background:#5effff;color:#000;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;font-weight:900;flex-shrink:0">2</div><div><b>Conecta tus películas</b><p style="color:#8b93a8;font-size:13px;margin-top:6px">En un archivo config.js pones tu API. Soporta TMDB, Firebase o tu JSON. Ya viene con Hope de ejemplo.</p></div></div>
+<div class="doc-step"><div style="background:#5effff;color:#000;width:32px;height:32px;display:grid;place-items:center;border-radius:50%;font-weight:900;flex-shrink:0">3</div><div><b>Genera APK y sube a Play Store</b><p style="color:#8b93a8;font-size:13px;margin-top:6px">npm run build te da el .AAB listo. Video de 7 min incluido para subirlo sin rechazo de Google.</p></div></div>
+</div>
+</div>
 
 <div class="section" id="soporte" style="background:#070a15;border-top:1px solid rgba(255,255,255,0.06)">
 <h2>Soporte directo</h2>
 <p class="sub">Soporte real, respuesta rápida y garantía incluida</p>
-<div style="max-width:900px;margin:0 auto;text-align:center">
-<a href="https://t.me/mendez240" target="_blank" style="background:#fff;color:#000;padding:14px 28px;border-radius:999px;font-weight:900;text-decoration:none">✈ Telegram @mendez240</a>
+<div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:24px">
+<div style="background:#11182c;padding:30px;border-radius:20px;border:1px solid rgba(255,255,255,0.08)">
+<h3 style="font-size:20px">✈ Telegram @mendez240</h3><p style="color:#8b93a8;font-size:14px;margin:12px 0;line-height:1.6">Respuesta en menos de 2 horas. Instalación incluida si compras Pro o Cinema+. Te ayudo a subirla a Play Store.</p><a href="https://t.me/mendez240" target="_blank" style="display:inline-block;background:#fff;color:#000;padding:12px 22px;border-radius:999px;font-weight:900;text-decoration:none;margin-top:10px">Hablar ahora</a>
+</div>
+<div style="display:grid;gap:12px">
+<div style="background:rgba(255,255,255,0.04);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.06)"><b style="font-size:14px">¿Puedo revender la app?</b><p style="color:#8b93a8;font-size:13px;margin-top:4px">Si, Cinema+ incluye licencia comercial para reventa ilimitada. Lite y Pro son para 1 app.</p></div>
+<div style="background:rgba(255,255,255,0.04);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.06)"><b style="font-size:14px">¿Necesito saber programar?</b><p style="color:#8b93a8;font-size:13px;margin-top:4px">No. Te mando video paso a paso. Si te trabas, me escribes y lo hago por ti en TeamViewer.</p></div>
+<div style="background:rgba(255,255,255,0.04);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.06)"><b style="font-size:14px">¿Actualizaciones incluidas?</b><p style="color:#8b93a8;font-size:13px;margin-top:4px">12 meses gratis. La v2.1 viene con perfiles infantiles y modo TV.</p></div>
 </div>
 </div>
+</div>
 
-<!-- MODALES -->
-<div id="modal-lite" class="modal" onclick="if(event.target==this)closeModal('lite')"><div class="modal-box"><div class="m-left"><div class="m-main"><img src="lite-1.jpg"></div></div><div class="m-right"><button class="close" onclick="closeModal('lite')">✕</button><h3>Pelisplusgo Lite</h3><div class="m-price">$15</div><div class="m-buttons"><a href="https://t.me/mendez240?text=Hola%20Mendez%20%F0%9F%91%8B%0AQuiero%20comprar%20PELISPLUSGO%20LITE%20-%20%2415" target="_blank" class="m-buy">Comprar Lite - $15</a><a href="https://download1588.mediafire.com/afgl55qdk6fgW5IhN8SPsVzMmv97BUi2AT8qj_OJ2HTAUzY_vct6x6x2KZ6AKt5BD7B0wppyE-vdduGTaNhTvyV2EHV_QniKEI17ykuOzuyjeIOa2oIwAoEWW9MVcL6looIHD1hI6zPfifiGmsEtS6x3aFBjEUkaGluhL-WLiZ4/ue5va1ed48bf409/app2508910-7xlbh3+%281%29.apk" target="_blank" class="m-demo">Ver Demo</a></div></div></div></div>
-
-<div id="modal-pro" class="modal" onclick="if(event.target==this)closeModal('pro')"><div class="modal-box"><div class="m-left"><div class="m-main"><img src="pro-1.jpg"></div></div><div class="m-right"><button class="close" onclick="closeModal('pro')">✕</button><h3>Pelisplusgo Pro</h3><div class="m-price">$25</div><div class="m-buttons"><a href="https://t.me/mendez240?text=Hola%20Mendez%20%F0%9F%91%8B%0AQuiero%20comprar%20PELISPLUSGO%20PRO%20-%20%2425" target="_blank" class="m-buy">Comprar Pro - $25</a><a href="https://download1588.mediafire.com/afgl55qdk6fgW5IhN8SPsVzMmv97BUi2AT8qj_OJ2HTAUzY_vct6x6x2KZ6AKt5BD7B0wppyE-vdduGTaNhTvyV2EHV_QniKEI17ykuOzuyjeIOa2oIwAoEWW9MVcL6looIHD1hI6zPfifiGmsEtS6x3aFBjEUkaGluhL-WLiZ4/ue5va1ed48bf409/app2508910-7xlbh3+%281%29.apk" target="_blank" class="m-demo">Ver Demo</a></div></div></div></div>
-
-<div id="modal-cinema" class="modal" onclick="if(event.target==this)closeModal('cinema')"><div class="modal-box"><div class="m-left"><div class="m-main"><img src="cinema-1.jpg"></div></div><div class="m-right"><button class="close" onclick="closeModal('cinema')">✕</button><h3>Pelisplusgo Cinema+</h3><div class="m-price" style="color:#c9a86a">$35</div><div class="m-buttons"><a href="https://t.me/mendez240?text=Hola%20Mendez%20%F0%9F%91%8B%0AQuiero%20comprar%20PELISPLUSGO%20CINEMA%2B%20-%20%2435" target="_blank" class="m-buy" style="background:#c9a86a">Comprar Cinema+ - $35</a><a href="https://download1588.mediafire.com/afgl55qdk6fgW5IhN8SPsVzMmv97BUi2AT8qj_OJ2HTAUzY_vct6x6x2KZ6AKt5BD7B0wppyE-vdduGTaNhTvyV2EHV_QniKEI17ykuOzuyjeIOa2oIwAoEWW9MVcL6looIHD1hI6zPfifiGmsEtS6x3aFBjEUkaGluhL-WLiZ4/ue5va1ed48bf409/app2508910-7xlbh3+%281%29.apk" target="_blank" class="m-demo">Ver Demo</a></div></div></div></div>
+<!-- MODALES CON TELEGRAM -->
+<div id="modal-lite" class="modal" onclick="if(event.target==this)closeModal('lite')"><div class="modal-box"><div class="m-left"><div class="m-main"><img src="lite-1.jpg"></div></div><div class="m-right"><button class="close" onclick="closeModal('lite')">✕</button><h3>Pelisplusgo Lite</h3><div class="m-price">$15</div><p class="m-desc">Ideal para empezar. Diseño Netflix con Hope, buscador y player.</p><div class="m-buttons"><a href="https://t.me/mendez240?text=Hola%20Mendez%20%F0%9F%91%8B%0AQuiero%20comprar%20PELISPLUSGO%20LITE%20-%20%2415%0A%0AVi%20tu%20tienda%20y%20me%20interesa%20Lite." target="_blank" class="m-buy">Comprar Lite - $15</a><a href="https://download1588.mediafire.com/afgl55qdk6fgW5IhN8SPsVzMmv97BUi2AT8qj_OJ2HTAUzY_vct6x6x2KZ6AKt5BD7B0wppyE-vdduGTaNhTvyV2EHV_QniKEI17ykuOzuyjeIOa2oIwAoEWW9MVcL6looIHD1hI6zPfifiGmsEtS6x3aFBjEUkaGluhL-WLiZ4/ue5va1ed48bf409/app2508910-7xlbh3+%281%29.apk" target="_blank" class="m-demo">Ver Demo</a></div></div></div></div>
+<div id="modal-pro" class="modal" onclick="if(event.target==this)closeModal('pro')"><div class="modal-box"><div class="m-left"><div class="m-main"><img src="pro-1.jpg"></div></div><div class="m-right"><button class="close" onclick="closeModal('pro')">✕</button><h3>Pelisplusgo Pro</h3><div class="m-price">$25</div><p class="m-desc">Multi-perfiles Alex, Sam, Mia, admin con analytics.</p><div class="m-buttons"><a href="https://t.me/mendez240?text=Hola%20Mendez%20%F0%9F%91%8B%0AQuiero%20comprar%20PELISPLUSGO%20PRO%20-%20%2425%20%E2%AD%90" target="_blank" class="m-buy">Comprar Pro - $25</a><a href="https://download1588.mediafire.com/afgl55qdk6fgW5IhN8SPsVzMmv97BUi2AT8qj_OJ2HTAUzY_vct6x6x2KZ6AKt5BD7B0wppyE-vdduGTaNhTvyV2EHV_QniKEI17ykuOzuyjeIOa2oIwAoEWW9MVcL6looIHD1hI6zPfifiGmsEtS6x3aFBjEUkaGluhL-WLiZ4/ue5va1ed48bf409/app2508910-7xlbh3+%281%29.apk" target="_blank" class="m-demo">Ver Demo</a></div></div></div></div>
+<div id="modal-cinema" class="modal" onclick="if(event.target==this)closeModal('cinema')"><div class="modal-box"><div class="m-left"><div class="m-main"><img src="cinema-1.jpg"></div></div><div class="m-right"><button class="close" onclick="closeModal('cinema')">✕</button><h3>Pelisplusgo Cinema+</h3><div class="m-price" style="color:#c9a86a">$35</div><p class="m-desc">Todo lo de Pro + Live TV HBO, Sports, Chromecast.</p><div class="m-buttons"><a href="https://t.me/mendez240?text=Hola%20Mendez%20%F0%9F%91%8B%0AQuiero%20comprar%20PELISPLUSGO%20CINEMA%2B%20-%20%2435%20%F0%9F%8E%AC" target="_blank" class="m-buy" style="background:#c9a86a">Comprar Cinema+ - $35</a><a href="https://download1588.mediafire.com/afgl55qdk6fgW5IhN8SPsVzMmv97BUi2AT8qj_OJ2HTAUzY_vct6x6x2KZ6AKt5BD7B0wppyE-vdduGTaNhTvyV2EHV_QniKEI17ykuOzuyjeIOa2oIwAoEWW9MVcL6looIHD1hI6zPfifiGmsEtS6x3aFBjEUkaGluhL-WLiZ4/ue5va1ed48bf409/app2508910-7xlbh3+%281%29.apk" target="_blank" class="m-demo">Ver Demo</a></div></div></div></div>
 
 <script>
-// === EDITA AQUÍ PARA AGREGAR PRODUCTOS NUEVOS ===
 const PRODUCTOS_DATA = [
-  { id: 'lite', nombre: 'Pelisplusgo Lite', precio: '$15', precioNum: 15, badge: '', desc: '20 Pantallas - Player HD', color: '#5effff' },
-  { id: 'pro', nombre: 'Pelisplusgo Pro', precio: '$25', precioNum: 25, badge: '★ MÁS VENDIDA', desc: '40 Pantallas - Admin + Multi-perfiles', color: '#5effff' },
-  { id: 'cinema', nombre: 'Pelisplusgo Cinema+', precio: '$35', precioNum: 35, badge: '', desc: '60+ Pantallas - Live TV + Chromecast', color: '#c9a86a' },
-  // EJEMPLO FUTURO: descomenta para agregar
-  // { id: 'kids', nombre: 'Pelisplusgo Kids', precio: '$45', precioNum: 45, badge: 'NUEVO', desc: 'Modo infantil + Control parental', color: '#ff7af4' },
+  { id: 'lite', nombre: 'Pelisplusgo Lite', precio: '$15', badge: '', desc: '20 Pantallas - Player HD y buscador.', color: '#5effff' },
+  { id: 'pro', nombre: 'Pelisplusgo Pro', precio: '$25', badge: '★ MÁS VENDIDA', desc: '40 Pantallas - Admin + Multi-perfiles.', color: '#5effff' },
+  { id: 'cinema', nombre: 'Pelisplusgo Cinema+', precio: '$35', badge: '', desc: '60+ Pantallas - Live TV + Chromecast.', color: '#c9a86a' },
 ];
 
 function renderProductos(){
@@ -141,45 +163,37 @@ function renderProductos(){
   const gridProducto = document.getElementById('producto-grid');
   let htmlPlantillas = '';
   let htmlProducto = '';
-
   PRODUCTOS_DATA.forEach(p=>{
     const card = `
       <div class="pcard ${p.badge.includes('VENDIDA')?'featured':''}">
-        ${p.badge?`<div class="pcard-badge" style="${p.color!=='#5effff'?'background:'+p.color:''}">${p.badge}</div>`:''}
+        ${p.badge?`<div class="pcard-badge">${p.badge}</div>`:''}
         <div class="pcard-icon" style="color:${p.color}">PELISPLUSGO STORE</div>
         <div class="pcard-info">
           <h3>${p.nombre}</h3>
-          <p style="color:#7b8399;font-size:13px;margin:8px 0">${p.desc}</p>
-          <div class="pfooter"><b style="color:${p.color};font-size:22px">${p.precio}</b><button onclick="openModal('${p.id}')" class="btn-primary">Ver Detalle</button></div>
+          <p>${p.desc}</p>
+          <div class="pfeat"><span>React Native</span><span>Figma</span></div>
+          <div class="pfooter"><b style="color:${p.color};font-size:23px">${p.precio}</b><button onclick="openModal('${p.id}')" class="btn-primary">Ver Detalle</button></div>
         </div>
       </div>`;
-
-    const cardProducto = `
+    const cardProd = `
       <div class="pcard">
         <div class="pcard-icon" style="color:${p.color}">${p.nombre.toUpperCase()}</div>
         <div class="pcard-info">
           <h3>${p.nombre}</h3>
-          <p style="color:#7b8399;font-size:13px;margin:8px 0">${p.desc}</p>
-          <div style="display:flex;gap:8px;margin:10px 0"><span style="background:rgba(255,255,255,0.06);padding:5px 10px;border-radius:20px;font-size:11px">${p.precio}</span><span style="background:rgba(94,255,255,0.1);color:#5effff;padding:5px 10px;border-radius:20px;font-size:11px">Disponible</span></div>
-          <div class="pfooter"><b style="color:${p.color};font-size:22px">${p.precio}</b><button onclick="openModal('${p.id}')" class="btn-primary">Comprar</button></div>
+          <p>${p.desc}</p>
+          <div class="pfooter" style="margin-top:18px"><b style="color:${p.color};font-size:23px">${p.precio}</b><button onclick="openModal('${p.id}')" class="btn-primary">Comprar</button></div>
         </div>
       </div>`;
-
     htmlPlantillas += card;
-    htmlProducto += cardProducto;
+    htmlProducto += cardProd;
   });
-
   gridPlantillas.innerHTML = htmlPlantillas;
   gridProducto.innerHTML = htmlProducto;
   document.getElementById('total-productos').textContent = PRODUCTOS_DATA.length;
 }
-
 function openModal(id){document.getElementById('modal-'+id).classList.add('active');document.body.style.overflow='hidden'}
 function closeModal(id){document.getElementById('modal-'+id).classList.remove('active');document.body.style.overflow=''}
-
 renderProductos();
-
-// Nav activo
 window.addEventListener('scroll',()=>{
   const secs=['plantillas','producto','caracteristicas','documentacion','soporte'];
   let cur='plantillas';
