@@ -86,7 +86,7 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 .m-thumb:hover{border-color:#5effff;transform:translateY(-2px)}
 .m-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center}
 
-/* LADO DERECHO SUBIDO ARRIBA */
+/* LADO DERECHO SUBIDO + TITULO PROFESIONAL GRANDE */
 .m-right{
   padding:28px 36px 36px;
   position:relative;
@@ -96,18 +96,39 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
   align-items:flex-start;
 }
 .close{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:#fff;cursor:pointer}
-.m-price{font-size:40px;font-weight:900;color:#5effff;margin:8px 0 14px}
+.m-right h3{
+  font-size:36px;
+  font-weight:900;
+  letter-spacing:-1.3px;
+  line-height:0.9;
+  color:#fff;
+  margin-bottom:6px;
+  text-shadow:0 0 40px rgba(94,255,255,0.25);
+  background:linear-gradient(180deg,#ffffff 25%,#9aa4b8 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.m-right h3::before{
+  content:"PLANTILLA PREMIUM";
+  display:block;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:3px;
+  color:#5effff;
+  margin-bottom:12px;
+  -webkit-text-fill-color:#5effff;
+  text-shadow:none;
+}
+.m-price{font-size:42px;font-weight:900;color:#5effff;margin:10px 0 14px}
 .m-desc{color:#8b93a8;font-size:14px;line-height:1.6;margin-bottom:16px}
 .m-list{list-style:none;width:100%}.m-list li{font-size:13.5px;color:#cbd5e1;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06)}.m-list li::before{content:"✓ ";color:#5effff;font-weight:900}
-
-/* BOTONES NUEVOS - MISMO TAMAÑO */
 .m-buttons{display:grid;gap:12px;width:100%;margin-top:22px}
 .m-buy{width:100%;padding:18px;background:#5effff;color:#000;border:none;border-radius:12px;font-weight:900;font-size:15px;cursor:pointer;transition:.2s}
 .m-buy:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(94,255,255,0.3)}
 .m-demo{width:100%;padding:18px;background:rgba(255,255,255,0.07);color:#fff;border:1px solid rgba(255,255,255,0.15);border-radius:12px;font-weight:900;font-size:15px;cursor:pointer;transition:.2s}
 .m-demo:hover{background:rgba(255,255,255,0.12);border-color:#fff}
-
-@media(max-width:1050px){.hero{grid-template-columns:1fr;padding:40px 5%}.hero-left h1{font-size:38px}.phone{width:340px;height:680px}.products,.modal-box{grid-template-columns:1fr}.modal-box{min-height:auto}.nav-pill{display:none}}
+@media(max-width:1050px){.hero{grid-template-columns:1fr;padding:40px 5%}.hero-left h1{font-size:38px}.phone{width:340px;height:680px}.products,.modal-box{grid-template-columns:1fr}.modal-box{min-height:auto}.nav-pill{display:none}.m-right h3{font-size:28px}}
 </style>
 </head>
 <body>
@@ -146,7 +167,6 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 </div>
 </div>
 
-<!-- LITE -->
 <div id="modal-lite" class="modal" onclick="if(event.target==this)closeModal('lite')">
 <div class="modal-box">
 <div class="m-left">
@@ -173,7 +193,6 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 </div>
 </div>
 
-<!-- PRO -->
 <div id="modal-pro" class="modal" onclick="if(event.target==this)closeModal('pro')">
 <div class="modal-box">
 <div class="m-left">
@@ -188,7 +207,7 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 </div>
 <div class="m-right">
 <button class="close" onclick="closeModal('pro')">✕</button>
-<h3>Pelisplusgo Pro ★ Más Vendida</h3>
+<h3>Pelisplusgo Pro</h3>
 <div class="m-price">$25</div>
 <p class="m-desc">Con multi-perfiles Alex, Sam, Mia, detalle de película con Hope, admin con analytics.</p>
 <ul class="m-list"><li>40 Pantallas Premium completas</li><li>Admin Dashboard con gráficas reales</li><li>Multi-perfiles + Watchlist + Favoritos</li><li>React Native + Flutter + Figma</li><li>Player HDR 4K + Soporte 12 meses</li></ul>
@@ -200,7 +219,6 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 </div>
 </div>
 
-<!-- CINEMA+ -->
 <div id="modal-cinema" class="modal" onclick="if(event.target==this)closeModal('cinema')">
 <div class="modal-box">
 <div class="m-left">
