@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pelisplusgo Store - By Mendez</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pelisplusgo Store</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<style>body{font-family:Inter,sans-serif;background:#070c1a}</style>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<style>*{font-family:'Plus Jakarta Sans',sans-serif} body{background:#050B17}</style>
 </head>
-<body class="text-white">
-<header class="flex justify-between items-center px-6 py-4 border-b border-white/10 bg-[#0f1426] sticky top-0 z-50">
-<div class="flex gap-2 items-center"><div class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center font-black">▶</div><h1 class="font-black">Pelisplusgo<span class="text-blue-400">go</span> Store</h1></div>
-<a href="https://t.me/mendez240" target="_blank" class="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm">● @mendez240 en línea</a>
+<body class="bg-[#050B17] text-white">
+<header class="h-[70px] border-b border-white/10 flex items-center">
+<div class="max-w-[1280px] mx-auto px-6 w-full flex justify-between items-center">
+<div class="flex gap-2 items-center font-black"><div class="w-9 h-9 rounded-lg bg-cyan-400 text-black flex items-center justify-center">▶</div>PELISPLUSGO STORE</div>
+<a href="https://t.me/mendez240" class="border border-cyan-400 text-cyan-300 px-4 py-2 rounded-lg text-sm font-bold">Comprar Template</a>
+</div>
 </header>
-<section class="px-6 md:px-16 py-14">
-<h2 class="text-5xl font-black leading-tight">Plantillas de App<br><span class="text-blue-500">de Streaming</span></h2>
-<p class="text-gray-400 mt-3 max-w-xl">Soy Mendez - Lanza tu app tipo Netflix en minutos. Código limpio, listo para Play Store. Soporte directo.</p>
-<div class="flex gap-3 mt-6">
-<button onclick="document.getElementById('plantillas').scrollIntoView({behavior:'smooth'})" class="bg-blue-500 px-6 py-3 rounded-xl font-bold">Ver plantillas ↓</button>
-<a href="https://t.me/mendez240" class="border border-white/20 px-6 py-3 rounded-xl">Hablar con Mendez</a>
+
+<section class="max-w-[1280px] mx-auto px-6 py-12 grid md:grid-cols-2 gap-10 items-center">
+<div>
+<h1 class="text-[42px] md:text-[52px] font-extrabold leading-[0.95]">La Plantilla de tu Propia App de Peliculas Tipo Netflix</h1>
+<p class="mt-4 text-white/50 text-sm">Diseño premium y personalizable para lanzar tu app de streaming. Código limpio, interfaz moderna con glassmorphism. Listo para iOS & Android — sin suscripciones, solo una compra única.</p>
+<div class="mt-6 flex flex-wrap gap-2 text-[11px]">
+<span class="bg-white/10 px-3 py-2 rounded-lg">UI Oscura + Glassmorphism</span>
+<span class="bg-white/10 px-3 py-2 rounded-lg">Grid de Películas Personalizable</span>
+<span class="bg-white/10 px-3 py-2 rounded-lg">React Native / Flutter / Swift</span>
+</div>
+<div class="mt-8 flex gap-3">
+<a href="https://t.me/mendez240" class="bg-cyan-400 text-black px-6 py-3 rounded-xl font-bold">Ver Demo en Vivo</a>
+<a href="https://t.me/mendez240" class="border border-white/20 px-6 py-3 rounded-xl font-bold">Descargar Template</a>
+</div>
+<p class="mt-6 text-[11px] text-white/30">Incluye: 35+ pantallas • Componentes reutilizables • Documentación completa • Soporte 12 meses</p>
+</div>
+
+<div class="flex justify-center">
+<div class="w-[320px] rounded-[34px] p-2 bg-white/10 border border-white/10 shadow-2xl">
+<img src="app.jpg" class="rounded-[24px] w-full h-[640px] object-cover object-top">
+</div>
 </div>
 </section>
-<section id="plantillas" class="px-6 md:px-12 pb-20 grid md:grid-cols-3 gap-6">
-<div class="bg-[#12182b] rounded-2xl overflow-hidden border border-white/10 p-5">
-<span class="bg-blue-500/20 text-blue-400 text-[10px] px-2 py-1 rounded font-bold">BASICO</span>
-<h3 class="font-bold mt-3">Netflix+ Pelis</h3><p class="text-xs text-gray-400">React • Figma • Código listo</p>
-<div class="flex justify-between items-center mt-4"><span class="text-3xl font-black text-blue-400">$15</span><button onclick="comprar('Netflix+ $15')" class="bg-blue-500 px-5 py-2 rounded-xl font-bold text-sm">Comprar</button></div>
+
+<div class="max-w-[1280px] mx-auto px-6 pb-10">
+<div class="grid md:grid-cols-3 gap-6 border border-white/10 rounded-xl p-6 bg-white/[0.03] text-sm">
+<div><b>100% Personalizable</b><p class="text-white/40 text-xs">Colores, tipografías y secciones editables</p></div>
+<div><b>Rendimiento Optimizado</b><p class="text-white/40 text-xs">Carga rápida, animaciones fluidas</p></div>
+<div><b>Soporte y Actualizaciones</b><p class="text-white/40 text-xs">Documentación + soporte dedicado</p></div>
 </div>
-<div class="bg-[#12182b] rounded-2xl overflow-hidden border-2 border-blue-500 p-5 relative">
-<span class="absolute top-3 left-3 bg-blue-500 text-[10px] px-2 py-1 rounded-full font-black">MAS VENDIDO 🔥</span>
-<h3 class="font-bold mt-6">Pro Streaming UHD</h3><p class="text-xs text-gray-400">Flutter • Multi-perfil • Yape</p>
-<div class="flex justify-between items-center mt-4"><span class="text-3xl font-black text-blue-400">$25</span><button onclick="comprar('Pro UHD $25')" class="bg-blue-500 px-5 py-2 rounded-xl font-bold text-sm">Comprar</button></div>
 </div>
-<div class="bg-[#12182b] rounded-2xl overflow-hidden border border-white/10 p-5">
-<span class="bg-purple-500/20 text-purple-300 text-[10px] px-2 py-1 rounded font-bold">PREMIUM</span>
-<h3 class="font-bold mt-3">Premium Cinema+</h3><p class="text-xs text-gray-400">React Native • Live TV</p>
-<div class="flex justify-between items-center mt-4"><span class="text-3xl font-black text-blue-400">$35</span><button onclick="comprar('Premium $35')" class="bg-blue-500 px-5 py-2 rounded-xl font-bold text-sm">Comprar</button></div>
-</div>
-</section>
-<script>
-function comprar(prod){
- const msg = encodeURIComponent(`Hola Mendez! Quiero comprar: ${prod}. Vi tu tienda Pelisplusgo. Me pasas tu Yape?`);
- window.open(`https://t.me/mendez240?text=${msg}`, '_blank');
-}
-</script>
 </body>
 </html>
