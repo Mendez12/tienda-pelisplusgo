@@ -6,84 +6,136 @@
 <title>Pelisplusgo Store - By Mendez</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#080a12;color:#fff;font-family:Inter, sans-serif;padding:40px 20px}
-h1{text-align:center;font-size:36px;font-weight:900;margin-bottom:8px}
-.sub{text-align:center;color:#8b93a8;font-size:14px;margin-bottom:40px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1200px;margin:0 auto}
-.card{background:#11182c;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden}
-.card.featured{border:1.5px solid #5effff;box-shadow:0 0 25px rgba(94,255,255,0.15)}
-.badge-top{background:#5effff;color:#070a15;text-align:center;padding:6px;font-size:11px;font-weight:900;letter-spacing:0.5px}
-.thumb{height:380px;background:#0d1326;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.thumb img{width:100%;height:100%;object-fit:cover}
-.info{padding:20px}
-.tags{display:flex;gap:6px;margin-bottom:10px}
-.tag{font-size:10px;font-weight:800;padding:4px 8px;border-radius:6px;background:rgba(255,255,255,0.07);color:#aab2c8}
-.tag.cyan{background:rgba(94,255,255,0.15);color:#5effff}
-.tag.purple{background:rgba(139,92,246,0.2);color:#a78bfa}
-.info h3{font-size:18px;font-weight:800;margin-bottom:6px}
-.info p{font-size:12.5px;color:#8b93a8;line-height:1.5;margin-bottom:14px}
-.features{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
-.features span{font-size:11px;color:#aab2c8;background:rgba(255,255,255,0.05);padding:4px 8px;border-radius:20px}
-.footer{display:flex;justify-content:space-between;align-items:center}
-.price{font-size:24px;font-weight:900;color:#5effff}
-.price small{display:block;font-size:10px;color:#6b7288;font-weight:400}
-.btn{background:#5effff;color:#070a15;border:none;padding:10px 18px;border-radius:10px;font-weight:800;cursor:pointer}
-.btn2{background:#fff;color:#000;border:none;padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer;margin-right:6px}
+body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden}
+.header{position:sticky;top:0;z-index:100;width:100%;display:flex;justify-content:space-between;align-items:center;padding:14px 4%;background:rgba(10,14,28,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08)}
+.logo{font-weight:900;font-size:19px;display:flex;align-items:center;gap:10px}
+.logo-icon{width:34px;height:34px;background:linear-gradient(135deg,#2ec4ff,#8b5cf6);display:grid;place-items:center;border-radius:8px}
+.nav{display:flex;gap:24px;font-size:14px;color:#9aa4b8;align-items:center}
+.btn-buy{background:#5effff;color:#070a15;padding:10px 22px;border-radius:999px;font-weight:900;border:none;cursor:pointer}
+.hero{width:100%;min-height:85vh;display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;padding:70px 4%;align-items:center}
+.hero h1{font-size:60px;line-height:0.95;letter-spacing:-2px;font-weight:900}
+.hero p{color:#a0a8bd;margin:24px 0;font-size:18px;line-height:1.6;max-width:650px}
+.tags{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.tag{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:8px 12px;border-radius:8px;font-size:12px;color:#a5e6ff}
+.btns{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.btn-primary{background:#5effff;color:#070a15;padding:16px 30px;border-radius:10px;border:none;font-weight:900;font-size:16px;cursor:pointer}
+.btn-ghost{border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;padding:16px 30px;border-radius:10px;font-weight:700;font-size:16px;cursor:pointer}
+.phone{width:380px;height:760px;background:#000;border-radius:40px;border:10px solid #1b2335;padding:6px;box-shadow:0 30px 80px rgba(0,0,0,.7);margin:0 auto}
+.phone img{width:100%;height:100%;object-fit:cover;border-radius:30px}
+.section{padding:70px 4%;max-width:1300px;margin:0 auto}
+.section h2{font-size:42px;font-weight:900;text-align:center;margin-bottom:12px}
+.section .sub{text-align:center;color:#8b93a8;font-size:16px;margin-bottom:40px}
+
+/* NUEVO - 3 PRODUCTOS COMO TIENDA */
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1200px;margin:0 auto}
+.pcard{background:#11182c;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden}
+.pcard.featured{border:1.5px solid #5effff;transform:scale(1.02);box-shadow:0 0 30px rgba(94,255,255,0.15)}
+.pcard-top{height:260px;background:#0d1326;overflow:hidden;display:grid;place-items:center}
+.pcard-top img{width:100%;height:100%;object-fit:cover}
+.pcard-badge{background:#5effff;color:#070a15;text-align:center;padding:6px;font-size:11px;font-weight:900}
+.pcard-info{padding:20px}
+.pcard-info h3{font-size:18px;font-weight:800}
+.pcard-info p{color:#8b93a8;font-size:12.5px;line-height:1.5;margin:8px 0 14px}
+.pfeat{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.pfeat span{font-size:11px;color:#aab2c8;background:rgba(255,255,255,0.06);padding:4px 8px;border-radius:20px}
+.pfooter{display:flex;justify-content:space-between;align-items:center}
+
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+.fbox{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:16px;padding:24px}
+.fbox b{display:block;margin:10px 0 6px;font-size:17px}
+.fbox span{color:#8b93a8;font-size:13px;line-height:1.6}
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.testi{background:#11182c;border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:20px;font-size:13px;color:#aab2c8}
+.testi strong{color:#fff;display:block;margin-top:10px}
+.cta{margin:60px 4%;background:linear-gradient(135deg,#1a2a4a,#0e1b2e);border:1px solid rgba(94,255,255,0.2);border-radius:20px;padding:50px;text-align:center}
+.footer{padding:40px 4%;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;color:#6b7288;font-size:13px}
+@media(max-width:900px){
+.hero{grid-template-columns:1fr;padding:40px 5%}
+.hero h1{font-size:36px}
+.features-grid,.testis,.products{grid-template-columns:1fr}
+.phone{width:300px;height:600px}
+.section h2{font-size:28px}
+.pcard.featured{transform:none}
+}
 </style>
 </head>
 <body>
 
-<h1>Elige tu Plantilla</h1>
+<div class="header">
+<div class="logo"><div class="logo-icon">▶</div>Pelisplusgo Store</div>
+<div class="nav"><span>Plantillas</span><span>Características</span><span>Soporte</span><button class="btn-buy">Comprar Template</button></div>
+</div>
+
+<div class="hero">
+<div>
+<h1>La Plantilla de tu Propia App de Peliculas Tipo Netflix</h1>
+<p>Diseño premium con glassmorphism, código limpio. Lista para iOS y Android. Una sola compra, tuya para siempre.</p>
+<div class="tags"><div class="tag">React Native + Flutter</div><div class="tag">+40 Pantallas</div><div class="tag">Figma + Documentación</div></div>
+<div class="btns"><button class="btn-primary">Ver Demo en Vivo →</button><button class="btn-ghost">Ver Características</button></div>
+</div>
+<div class="phone"><img src="app.jpg" alt="Hope"></div>
+</div>
+
+<!-- 3 PLANTILLAS COMO PRODUCTOS, NO COMO PLANES -->
+<div class="section">
+<h2>Elige tu Plantilla</h2>
 <p class="sub">3 productos diferentes, no son suscripciones. Pago único para siempre.</p>
+<div class="products">
 
-<div class="grid">
-
-<!-- LITE -->
-<div class="card">
-<div class="thumb"><img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600" alt=""></div>
-<div class="info">
-<div class="tags"><span class="tag cyan">REACT NATIVE</span><span class="tag">FIGMA</span></div>
+<div class="pcard">
+<div class="pcard-top"><img src="app.jpg" alt="Lite"></div>
+<div class="pcard-info">
 <h3>Pelisplusgo Lite</h3>
 <p>Perfecta para empezar tu app de películas. Diseño limpio tipo Netflix.</p>
-<div class="features"><span>20 Pantallas</span><span>Player HD</span><span>Buscador</span></div>
-<div class="footer">
-<div><div class="price">$15 <small>Pago único</small></div></div>
-<div><button class="btn2">Ver Demo</button><button class="btn">Comprar</button></div>
-</div>
+<div class="pfeat"><span>20 Pantallas</span><span>Player HD</span><span>Buscador</span></div>
+<div class="pfooter"><div style="font-size:22px;font-weight:900;color:#5effff">$15</div><button class="btn-primary" style="padding:10px 18px;font-size:14px">Comprar</button></div>
 </div>
 </div>
 
-<!-- PRO DESTACADA -->
-<div class="card featured">
-<div class="badge-top">★ MÁS VENDIDA</div>
-<div class="thumb"><img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=600" alt=""></div>
-<div class="info">
-<div class="tags"><span class="tag cyan">FLUTTER + REACT</span><span class="tag">ADMIN PANEL</span></div>
+<div class="pcard featured">
+<div class="pcard-badge">★ MÁS VENDIDA</div>
+<div class="pcard-top"><img src="app.jpg" alt="Pro"></div>
+<div class="pcard-info">
 <h3>Pelisplusgo Pro</h3>
-<p>La más completa y vendida. Con panel de administrador y multi-perfiles.</p>
-<div class="features"><span>40 Pantallas</span><span>Admin Panel</span><span>Multi-perfil</span></div>
-<div class="footer">
-<div><div class="price">$25 <small>Pago único</small></div></div>
-<div><button class="btn2">Ver Demo</button><button class="btn">Comprar</button></div>
-</div>
+<p>La más completa y vendida. Con panel admin y multi-perfiles.</p>
+<div class="pfeat"><span>40 Pantallas</span><span>Admin Panel</span><span>Multi-perfil</span></div>
+<div class="pfooter"><div style="font-size:22px;font-weight:900;color:#5effff">$25</div><button class="btn-primary" style="padding:10px 18px;font-size:14px">Comprar</button></div>
 </div>
 </div>
 
-<!-- CINEMA+ -->
-<div class="card">
-<div class="thumb"><img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=600" alt=""></div>
-<div class="info">
-<div class="tags"><span class="tag purple">PREMIUM</span><span class="tag">LIVE TV</span></div>
+<div class="pcard">
+<div class="pcard-top"><img src="app.jpg" alt="Cinema"></div>
+<div class="pcard-info">
 <h3>Pelisplusgo Cinema+</h3>
 <p>Todo incluido. Live TV, Chromecast y super admin para negocios.</p>
-<div class="features"><span>60+ Pantallas</span><span>Live TV</span><span>Chromecast</span></div>
-<div class="footer">
-<div><div class="price">$35 <small>Pago único</small></div></div>
-<div><button class="btn2">Ver Demo</button><button class="btn">Comprar</button></div>
-</div>
+<div class="pfeat"><span>60+ Pantallas</span><span>Live TV</span><span>Chromecast</span></div>
+<div class="pfooter"><div style="font-size:22px;font-weight:900;color:#5effff">$35</div><button class="btn-primary" style="padding:10px 18px;font-size:14px">Comprar</button></div>
 </div>
 </div>
 
 </div>
+</div>
+
+<div class="section" style="background:rgba(255,255,255,0.02)">
+<h2>Todo lo que incluye</h2>
+<p class="sub">No vendemos planes, vendemos tu app completa</p>
+<div class="features-grid">
+<div class="fbox">🎨 <b>Diseño Netflix Real</b><span>Interfaz idéntica a Netflix con la pantalla de Hope</span></div>
+<div class="fbox">⚡ <b>60fps Fluido</b><span>Animaciones y carga ultra rápida</span></div>
+<div class="fbox">🔍 <b>Buscador + Categorías</b><span>Ciencia, Misterio, Acción y filtros</span></div>
+</div>
+</div>
+
+<div class="cta">
+<h2>Tu propia app de películas, hoy mismo</h2>
+<p style="color:#8b93a8;margin:10px 0 20px">Una sola compra, tu negocio para siempre</p>
+<button class="btn-primary">Ver Plantillas - Desde $15</button>
+</div>
+
+<div class="footer">
+<div>© 2026 Pelisplusgo Store by Mendez</div>
+<div>Template Premium • Un solo pago</div>
+</div>
+
 </body>
 </html>
