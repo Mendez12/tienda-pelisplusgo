@@ -7,12 +7,46 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden}
-.header{position:sticky;top:0;z-index:100;width:100vw;height:68px;display:flex;justify-content:space-between;align-items:center;padding:0 5%;background:#0a0e1c;border-bottom:1px solid rgba(255,255,255,0.08)}
-.logo{font-weight:900;font-size:19px;display:flex;align-items:center;gap:10px}
-.logo-icon{width:36px;height:36px;background:#2ec4ff;color:#000;display:grid;place-items:center;border-radius:8px;font-weight:900}
-.nav{display:flex;gap:28px;font-size:14px;align-items:center}
-.nav a{color:#9aa4b8;text-decoration:none}
-.hero{width:100vw;min-height:calc(100vh - 68px);display:grid;grid-template-columns:1fr 1fr;padding:0 5%;align-items:center;background:#070a15}
+
+/* CABECERA PREMIUM NUEVA */
+.header{
+  position:sticky;top:0;z-index:100;width:100vw;height:72px;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 3%; background:rgba(10,14,28,0.85);
+  backdrop-filter:blur(20px) saturate(180%);
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  box-shadow:0 10px 40px rgba(0,0,0,0.4);
+}
+.logo{font-weight:900;font-size:19px;display:flex;align-items:center;gap:12px;letter-spacing:-0.3px}
+.logo-icon{
+  width:38px;height:38px;
+  background:linear-gradient(135deg,#5effff,#2ec4ff);
+  color:#000;display:grid;place-items:center;
+  border-radius:10px;font-weight:900;
+  box-shadow:0 0 20px rgba(94,255,255,0.4);
+}
+.nav-pill{
+  display:flex;align-items:center;gap:4px;
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.08);
+  padding:6px;border-radius:999px;
+}
+.nav-pill a{
+  color:#8b93a8;text-decoration:none;font-size:13.5px;font-weight:600;
+  padding:8px 18px;border-radius:999px;transition:.2s;
+}
+.nav-pill a:hover{background:rgba(255,255,255,0.08);color:#fff}
+.nav-pill a.active{background:#fff;color:#000;font-weight:800}
+.header-right{display:flex;align-items:center;gap:14px}
+.btn-ghost{color:#9aa4b8;font-size:13px;text-decoration:none;font-weight:600}
+.btn-whatsapp{
+  background:#fff;color:#000;padding:10px 20px;border-radius:999px;
+  font-weight:800;font-size:13px;border:none;cursor:pointer;
+  display:flex;align-items:center;gap:8px;transition:.2s
+}
+.btn-whatsapp:hover{background:#5effff;transform:translateY(-1px)}
+
+.hero{width:100vw;min-height:calc(100vh - 72px);display:grid;grid-template-columns:1fr 1fr;padding:0 5%;align-items:center;background:#070a15}
 .hero-left h1{font-size:64px;line-height:0.98;letter-spacing:-2px;font-weight:900}
 .hero-left p{color:#8b93a8;margin:22px 0;font-size:15px;line-height:1.7;max-width:620px}
 .tags{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0}
@@ -55,14 +89,23 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 .m-desc{color:#8b93a8;font-size:15px;line-height:1.7;margin-bottom:20px}
 .m-list{list-style:none}.m-list li{font-size:14px;color:#cbd5e1;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.06)}.m-list li::before{content:"✓ ";color:#5effff;font-weight:900}
 .m-buy{width:100%;margin-top:26px;padding:18px;background:#5effff;color:#000;border:none;border-radius:12px;font-weight:900;font-size:16px;cursor:pointer}
-@media(max-width:1050px){.hero{grid-template-columns:1fr;padding:40px 5%}.hero-left h1{font-size:38px}.phone{width:340px;height:680px}.products,.modal-box{grid-template-columns:1fr}.modal-box{min-height:auto}.nav{display:none}}
+@media(max-width:1050px){.hero{grid-template-columns:1fr;padding:40px 5%}.hero-left h1{font-size:38px}.phone{width:340px;height:680px}.products,.modal-box{grid-template-columns:1fr}.modal-box{min-height:auto}.nav-pill{display:none}}
 </style>
 </head>
 <body>
 
 <div class="header">
-<div class="logo"><div class="logo-icon">▶</div>Pelisplusgo Store</div>
-<div class="nav"><a href="#">Plantillas</a><a href="#">Características</a><a href="#">Documentación</a><a href="#">Soporte</a></div>
+  <div class="logo"><div class="logo-icon">▶</div>Pelisplusgo Store</div>
+  <div class="nav-pill">
+    <a href="#plantillas" class="active">Plantillas</a>
+    <a href="#">Características</a>
+    <a href="#">Documentación</a>
+    <a href="#">Soporte</a>
+  </div>
+  <div class="header-right">
+    <a class="btn-ghost" href="#">v2.0 Nuevo</a>
+    <button class="btn-whatsapp">● Contactar</button>
+  </div>
 </div>
 
 <div class="hero">
@@ -75,7 +118,7 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 <div class="phone-wrap"><div class="phone"><img src="app.jpg" alt="Hope"></div></div>
 </div>
 
-<div class="section">
+<div class="section" id="plantillas">
 <h2>Elige tu Plantilla</h2>
 <p class="sub">Pago único, tuya para siempre. Cada botón abre su detalle en la misma página.</p>
 <div class="products">
@@ -88,10 +131,7 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 <div id="modal-lite" class="modal" onclick="if(event.target==this)closeModal('lite')">
 <div class="modal-box">
 <div class="m-left">
-<div class="m-main">
-<img id="main-lite" src="lite-1.jpg" onerror="this.style.display='none'">
-<div class="ph">PELISPLUSGO LITE<br><small style="font-size:11px;color:#8b93a8">lite-1.jpg</small></div>
-</div>
+<div class="m-main"><img id="main-lite" src="lite-1.jpg" onerror="this.style.display='none'"><div class="ph">PELISPLUSGO LITE<br><small style="font-size:11px;color:#8b93a8">lite-1.jpg</small></div></div>
 <div class="m-thumbs">
 <div class="m-thumb" onclick="changeMain('lite','lite-1.jpg')"><img src="lite-1.jpg" onerror="this.parentElement.style.display='none'"></div>
 <div class="m-thumb" onclick="changeMain('lite','lite-2.jpg')"><img src="lite-2.jpg" onerror="this.parentElement.style.display='none'"></div>
@@ -100,24 +140,14 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 <div class="m-thumb" onclick="changeMain('lite','lite-5.jpg')"><img src="lite-5.jpg" onerror="this.parentElement.style.display='none'"></div>
 </div>
 </div>
-<div class="m-right">
-<button class="close" onclick="closeModal('lite')">✕</button>
-<h3>Pelisplusgo Lite</h3>
-<div class="m-price">$15</div>
-<p class="m-desc">Ideal para empezar. Diseño Netflix con Hope, buscador y player. 60fps fluido.</p>
-<ul class="m-list"><li>20 Pantallas Figma + React Native</li><li>Player HD + Buscador + Categorías</li><li>Glassmorphism + Dark Mode premium</li><li>Documentación completa Play Store</li><li>Soporte 3 meses incluido</li></ul>
-<button class="m-buy">Comprar Lite - $15</button>
-</div>
+<div class="m-right"><button class="close" onclick="closeModal('lite')">✕</button><h3>Pelisplusgo Lite</h3><div class="m-price">$15</div><p class="m-desc">Ideal para empezar. Diseño Netflix con Hope, buscador y player. 60fps fluido.</p><ul class="m-list"><li>20 Pantallas Figma + React Native</li><li>Player HD + Buscador + Categorías</li><li>Glassmorphism + Dark Mode premium</li><li>Documentación completa Play Store</li><li>Soporte 3 meses incluido</li></ul><button class="m-buy">Comprar Lite - $15</button></div>
 </div>
 </div>
 
 <div id="modal-pro" class="modal" onclick="if(event.target==this)closeModal('pro')">
 <div class="modal-box">
 <div class="m-left">
-<div class="m-main">
-<img id="main-pro" src="pro-1.jpg" onerror="this.style.display='none'">
-<div class="ph">PELISPLUSGO PRO<br><small style="font-size:11px;color:#8b93a8">pro-1.jpg</small></div>
-</div>
+<div class="m-main"><img id="main-pro" src="pro-1.jpg" onerror="this.style.display='none'"><div class="ph">PELISPLUSGO PRO<br><small style="font-size:11px;color:#8b93a8">pro-1.jpg</small></div></div>
 <div class="m-thumbs">
 <div class="m-thumb" onclick="changeMain('pro','pro-1.jpg')"><img src="pro-1.jpg" onerror="this.parentElement.style.display='none'"></div>
 <div class="m-thumb" onclick="changeMain('pro','pro-2.jpg')"><img src="pro-2.jpg" onerror="this.parentElement.style.display='none'"></div>
@@ -126,24 +156,14 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 <div class="m-thumb" onclick="changeMain('pro','pro-5.jpg')"><img src="pro-5.jpg" onerror="this.parentElement.style.display='none'"></div>
 </div>
 </div>
-<div class="m-right">
-<button class="close" onclick="closeModal('pro')">✕</button>
-<h3>Pelisplusgo Pro ★ Más Vendida</h3>
-<div class="m-price">$25</div>
-<p class="m-desc">Con multi-perfiles Alex, Sam, Mia, detalle de película con Hope, admin con analytics.</p>
-<ul class="m-list"><li>40 Pantallas Premium completas</li><li>Admin Dashboard con gráficas reales</li><li>Multi-perfiles + Watchlist + Favoritos</li><li>React Native + Flutter + Figma</li><li>Player HDR 4K + Soporte 12 meses</li></ul>
-<button class="m-buy">Comprar Pro - $25</button>
-</div>
+<div class="m-right"><button class="close" onclick="closeModal('pro')">✕</button><h3>Pelisplusgo Pro ★ Más Vendida</h3><div class="m-price">$25</div><p class="m-desc">Con multi-perfiles Alex, Sam, Mia, detalle de película con Hope, admin con analytics.</p><ul class="m-list"><li>40 Pantallas Premium completas</li><li>Admin Dashboard con gráficas reales</li><li>Multi-perfiles + Watchlist + Favoritos</li><li>React Native + Flutter + Figma</li><li>Player HDR 4K + Soporte 12 meses</li></ul><button class="m-buy">Comprar Pro - $25</button></div>
 </div>
 </div>
 
 <div id="modal-cinema" class="modal" onclick="if(event.target==this)closeModal('cinema')">
 <div class="modal-box">
 <div class="m-left">
-<div class="m-main">
-<img id="main-cinema" src="cinema-1.jpg" onerror="this.style.display='none'">
-<div class="ph" style="color:#c9a86a">PELISPLUSGO CINEMA+<br><small style="font-size:11px;color:#8b93a8">cinema-1.jpg</small></div>
-</div>
+<div class="m-main"><img id="main-cinema" src="cinema-1.jpg" onerror="this.style.display='none'"><div class="ph" style="color:#c9a86a">PELISPLUSGO CINEMA+<br><small style="font-size:11px;color:#8b93a8">cinema-1.jpg</small></div></div>
 <div class="m-thumbs">
 <div class="m-thumb" onclick="changeMain('cinema','cinema-1.jpg')"><img src="cinema-1.jpg" onerror="this.parentElement.style.display='none'"></div>
 <div class="m-thumb" onclick="changeMain('cinema','cinema-2.jpg')"><img src="cinema-2.jpg" onerror="this.parentElement.style.display='none'"></div>
@@ -152,14 +172,7 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 <div class="m-thumb" onclick="changeMain('cinema','cinema-5.jpg')"><img src="cinema-5.jpg" onerror="this.parentElement.style.display='none'"></div>
 </div>
 </div>
-<div class="m-right">
-<button class="close" onclick="closeModal('cinema')">✕</button>
-<h3>Pelisplusgo Cinema+</h3>
-<div class="m-price" style="color:#c9a86a">$35</div>
-<p class="m-desc">Todo lo de Pro + Live TV con HBO, Sports, News 24, Trending y Chromecast.</p>
-<ul class="m-list"><li>60+ Pantallas Premium negocio</li><li>Live TV 12 canales</li><li>Chromecast + Descargas offline</li><li>Super Admin Panel completo</li><li>Licencia comercial para reventa</li></ul>
-<button class="m-buy" style="background:#c9a86a">Comprar Cinema+ - $35</button>
-</div>
+<div class="m-right"><button class="close" onclick="closeModal('cinema')">✕</button><h3>Pelisplusgo Cinema+</h3><div class="m-price" style="color:#c9a86a">$35</div><p class="m-desc">Todo lo de Pro + Live TV con HBO, Sports, News 24, Trending y Chromecast.</p><ul class="m-list"><li>60+ Pantallas Premium negocio</li><li>Live TV 12 canales</li><li>Chromecast + Descargas offline</li><li>Super Admin Panel completo</li><li>Licencia comercial para reventa</li></ul><button class="m-buy" style="background:#c9a86a">Comprar Cinema+ - $35</button></div>
 </div>
 </div>
 
@@ -176,6 +189,5 @@ function changeMain(modalId, newSrc){
   }
 }
 </script>
-
 </body>
 </html>
