@@ -2,51 +2,56 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pelisplusgo Store - By Mendez</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden}
-.header{position:sticky;top:0;z-index:50;width:100%;display:flex;justify-content:space-between;align-items:center;padding:12px 4vw;background:rgba(10,14,28,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08)}
-.logo{font-weight:900;font-size:clamp(14px,2vw,18px);display:flex;align-items:center;gap:10px;line-height:1}
-.logo-icon{width:32px;height:32px;background:linear-gradient(135deg,#2ec4ff,#8b5cf6);display:grid;place-items:center;border-radius:8px}
-.nav{display:flex;gap:clamp(10px,2vw,28px);font-size:clamp(12px,1.2vw,14px);color:#9aa4b8;align-items:center}
-.btn-buy{background:rgba(255,255,255,0.08);border:1px solid #5effff;color:#b9f1ff;padding:8px 18px;border-radius:999px;font-weight:700;font-size:13px;white-space:nowrap}
-.hero{width:100%;min-height:92vh;display:grid;grid-template-columns:1.1fr 0.9fr;gap:4vw;padding:5vh 4vw;align-items:center;max-width:100vw}
-.hero-text h1{font-size:clamp(28px,4.5vw,58px);line-height:0.95;letter-spacing:-1.5px;font-weight:900}
-.hero-text p{color:#9aa4b8;margin:20px 0;font-size:clamp(13px,1.3vw,15px);line-height:1.6;max-width:100%}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
-.tag{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:7px 12px;border-radius:8px;font-size:11px;color:#a5e6ff}
-.btns{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}
-.btn-primary{background:#5effff;color:#070a15;padding:14px 26px;border-radius:10px;border:none;font-weight:900;font-size:14px;flex:1;min-width:140px;max-width:220px}
-.btn-ghost{border:1px solid rgba(255,255,255,0.2);background:transparent;color:#fff;padding:14px 26px;border-radius:10px;font-weight:700;font-size:14px;flex:1;min-width:140px;max-width:220px}
+body{background:#070a15;color:#fff;font-family:Inter,system-ui,Arial;overflow-x:hidden}
+.header{position:sticky;top:0;z-index:50;width:100%;display:flex;justify-content:space-between;align-items:center;padding:16px 3%;background:rgba(10,14,28,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08)}
+.logo{font-weight:900;font-size:20px;display:flex;align-items:center;gap:10px;line-height:1}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#2ec4ff,#8b5cf6);display:grid;place-items:center;border-radius:10px;font-size:18px}
+.nav{display:flex;gap:26px;font-size:14px;color:#9aa4b8;align-items:center}
+.btn-buy{background:rgba(255,255,255,0.08);border:1px solid #5effff;color:#b9f1ff;padding:10px 20px;border-radius:999px;font-weight:800;cursor:pointer}
+.hero{width:100%;min-height:88vh;display:grid;grid-template-columns:1.15fr 0.85fr;gap:50px;padding:70px 3%;align-items:center;max-width:100vw}
+.hero-text h1{font-size:62px;line-height:0.95;letter-spacing:-2.5px;font-weight:900}
+.hero-text p{color:#a0a8bd;margin:28px 0 22px;font-size:19px;line-height:1.6;max-width:680px}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0 28px}
+.tag{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);padding:9px 14px;border-radius:10px;font-size:13px;color:#a5e6ff}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:#5effff;color:#070a15;padding:18px 36px;border-radius:12px;border:none;font-weight:900;font-size:17px;cursor:pointer;box-shadow:0 0 20px rgba(94,255,255,0.3)}
+.btn-ghost{border:1px solid rgba(255,255,255,0.25);background:transparent;color:#fff;padding:18px 36px;border-radius:12px;font-weight:700;font-size:17px;cursor:pointer}
 .phone-wrap{width:100%;display:flex;justify-content:center;align-items:center}
-.phone{width:min(85vw,380px);aspect-ratio:9/19.5;height:auto;background:#000;border-radius:clamp(28px,4vw,40px);border:clamp(6px,1vw,10px) solid #1b2335;padding:6px;box-shadow:0 30px 80px rgba(0,0,0,.7),0 0 40px rgba(94,234,255,0.12);position:relative}
-.phone img{width:100%;height:100%;object-fit:cover;border-radius:clamp(20px,3vw,30px);display:block}
-.features{width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:14px 4vw;margin:20px 0 30px;background:rgba(255,255,255,0.04);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)}
-.feat{display:flex;gap:10px;align-items:center}
-.feat b{font-size:clamp(11px,1.1vw,13px);display:block}
-.feat span{font-size:clamp(10px,1vw,11px);color:#8b93a8;display:block}
+.phone{width:400px;height:800px;background:#000;border-radius:42px;border:10px solid #1b2335;padding:7px;box-shadow:0 35px 90px rgba(0,0,0,.8),0 0 50px rgba(94,234,255,0.15);position:relative}
+.phone img{width:100%;height:100%;object-fit:cover;border-radius:32px;display:block}
+.features{width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding:22px 3%;margin:30px 0;background:rgba(255,255,255,0.04);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)}
+.feat{display:flex;gap:12px;align-items:flex-start}
+.feat-icon{font-size:22px}
+.feat b{font-size:15px;display:block;margin-bottom:2px}
+.feat span{font-size:13px;color:#8b93a8;display:block;line-height:1.4}
 
-/* TABLET */
+@media(max-width:1100px){
+.hero-text h1{font-size:48px}
+.phone{width:360px;height:720px}
+}
 @media(max-width:900px){
-.hero{grid-template-columns:1fr;min-height:auto;padding:30px 5vw}
-.phone{width:min(70vw,340px);margin:10px auto}
-.features{grid-template-columns:1fr;gap:16px}
+.hero{grid-template-columns:1fr;padding:40px 5%;min-height:auto;gap:30px}
+.hero-text h1{font-size:38px;letter-spacing:-1px}
+.hero-text p{font-size:16px}
+.phone{width:330px;height:660px;margin:0 auto}
+.features{grid-template-columns:1fr;gap:18px}
 .nav span{display:none}
 }
-/* CELULAR CHICO */
 @media(max-width:480px){
-.hero{padding:20px 5vw}
-.hero-text h1{font-size:28px}
-.phone{width:78vw}
+.hero-text h1{font-size:32px}
 .btns{flex-direction:column}
-.btn-primary,.btn-ghost{max-width:100%;width:100%}
-.header{padding:10px 4vw}
+.btn-primary,.btn-ghost{width:100%;max-width:100%}
+.phone{width:82vw;height:auto;aspect-ratio:9/19.5}
+.features{padding:16px 5%}
 }
 </style>
 </head>
 <body>
+
 <div class="header">
 <div class="logo"><div class="logo-icon">▶</div>Pelisplusgo Store</div>
 <div class="nav"><span>Plantillas</span><span>Características</span><span>Documentación</span><span>Soporte</span><button class="btn-buy">Comprar Template</button></div>
@@ -56,19 +61,29 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 <div class="hero-text">
 <h1>La Plantilla de tu Propia App de Peliculas Tipo Netflix</h1>
 <p>Diseño premium y personalizable para lanzar tu app de streaming de películas. Código limpio, interfaz moderna con glassmorphism. Listo para iOS y Android — sin suscripciones, solo una compra única.</p>
-<div class="tags"><div class="tag">UI Oscura + Glassmorphism</div><div class="tag">Grid de Peliculas Personalizable</div><div class="tag">React Native / Flutter / Swift</div></div>
-<div class="btns"><button class="btn-primary">Ver Demo en Vivo</button><button class="btn-ghost">Descargar Template</button></div>
+<div class="tags">
+<div class="tag">UI Oscura + Glassmorphism</div>
+<div class="tag">Grid de Peliculas Personalizable</div>
+<div class="tag">React Native / Flutter / Swift</div>
+</div>
+<div class="btns">
+<button class="btn-primary">Ver Demo en Vivo</button>
+<button class="btn-ghost">Descargar Template</button>
+</div>
 </div>
 
 <div class="phone-wrap">
-<div class="phone"><img src="app.jpg" alt="App Pelisplusgo Hope"></div>
+<div class="phone">
+<img src="app.jpg" alt="App Pelisplusgo Hope">
+</div>
 </div>
 </div>
 
 <div class="features">
-<div class="feat">⚡ <div><b>100% Personalizable</b><span>Colores, tipografías y secciones editables</span></div></div>
-<div class="feat">🚀 <div><b>Rendimiento Optimizado</b><span>Carga rápida, animaciones fluidas</span></div></div>
-<div class="feat">🛟 <div><b>Soporte y Actualizaciones</b><span>Documentación + soporte dedicado</span></div></div>
+<div class="feat"><div class="feat-icon">🎨</div><div><b>100% Personalizable</b><span>Colores, tipografías y secciones editables a tu marca</span></div></div>
+<div class="feat"><div class="feat-icon">⚡</div><div><b>Rendimiento Optimizado</b><span>Carga rápida, animaciones fluidas y 60fps</span></div></div>
+<div class="feat"><div class="feat-icon">🛟</div><div><b>Soporte y Actualizaciones</b><span>Documentación completa + soporte dedicado 12 meses</span></div></div>
 </div>
+
 </body>
 </html>
