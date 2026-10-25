@@ -85,12 +85,28 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 .m-thumb{height:110px;border-radius:12px;background:#111a2f;border:1px solid rgba(255,255,255,0.08);overflow:hidden;cursor:pointer;position:relative;transition:.15s}
 .m-thumb:hover{border-color:#5effff;transform:translateY(-2px)}
 .m-thumb img{width:100%;height:100%;object-fit:cover;object-position:top center}
-.m-right{padding:36px;position:relative;display:flex;flex-direction:column;justify-content:center}
+
+/* LADO DERECHO SUBIDO ARRIBA */
+.m-right{
+  padding:28px 36px 36px;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  align-items:flex-start;
+}
 .close{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:#fff;cursor:pointer}
-.m-price{font-size:40px;font-weight:900;color:#5effff;margin:16px 0}
-.m-desc{color:#8b93a8;font-size:15px;line-height:1.7;margin-bottom:20px}
-.m-list{list-style:none}.m-list li{font-size:14px;color:#cbd5e1;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.06)}.m-list li::before{content:"✓ ";color:#5effff;font-weight:900}
-.m-buy{width:100%;margin-top:26px;padding:18px;background:#5effff;color:#000;border:none;border-radius:12px;font-weight:900;font-size:16px;cursor:pointer}
+.m-price{font-size:40px;font-weight:900;color:#5effff;margin:8px 0 14px}
+.m-desc{color:#8b93a8;font-size:14px;line-height:1.6;margin-bottom:16px}
+.m-list{list-style:none;width:100%}.m-list li{font-size:13.5px;color:#cbd5e1;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06)}.m-list li::before{content:"✓ ";color:#5effff;font-weight:900}
+
+/* BOTONES NUEVOS - MISMO TAMAÑO */
+.m-buttons{display:grid;gap:12px;width:100%;margin-top:22px}
+.m-buy{width:100%;padding:18px;background:#5effff;color:#000;border:none;border-radius:12px;font-weight:900;font-size:15px;cursor:pointer;transition:.2s}
+.m-buy:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(94,255,255,0.3)}
+.m-demo{width:100%;padding:18px;background:rgba(255,255,255,0.07);color:#fff;border:1px solid rgba(255,255,255,0.15);border-radius:12px;font-weight:900;font-size:15px;cursor:pointer;transition:.2s}
+.m-demo:hover{background:rgba(255,255,255,0.12);border-color:#fff}
+
 @media(max-width:1050px){.hero{grid-template-columns:1fr;padding:40px 5%}.hero-left h1{font-size:38px}.phone{width:340px;height:680px}.products,.modal-box{grid-template-columns:1fr}.modal-box{min-height:auto}.nav-pill{display:none}}
 </style>
 </head>
@@ -130,6 +146,7 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 </div>
 </div>
 
+<!-- LITE -->
 <div id="modal-lite" class="modal" onclick="if(event.target==this)closeModal('lite')">
 <div class="modal-box">
 <div class="m-left">
@@ -142,10 +159,21 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 <div class="m-thumb" onclick="changeMain('lite','lite-5.jpg')"><img src="lite-5.jpg" onerror="this.parentElement.style.display='none'"></div>
 </div>
 </div>
-<div class="m-right"><button class="close" onclick="closeModal('lite')">✕</button><h3>Pelisplusgo Lite</h3><div class="m-price">$15</div><p class="m-desc">Ideal para empezar. Diseño Netflix con Hope, buscador y player. 60fps fluido.</p><ul class="m-list"><li>20 Pantallas Figma + React Native</li><li>Player HD + Buscador + Categorías</li><li>Glassmorphism + Dark Mode premium</li><li>Documentación completa Play Store</li><li>Soporte 3 meses incluido</li></ul><button class="m-buy">Comprar Lite - $15</button></div>
+<div class="m-right">
+<button class="close" onclick="closeModal('lite')">✕</button>
+<h3>Pelisplusgo Lite</h3>
+<div class="m-price">$15</div>
+<p class="m-desc">Ideal para empezar. Diseño Netflix con Hope, buscador y player. 60fps fluido.</p>
+<ul class="m-list"><li>20 Pantallas Figma + React Native</li><li>Player HD + Buscador + Categorías</li><li>Glassmorphism + Dark Mode premium</li><li>Documentación completa Play Store</li><li>Soporte 3 meses incluido</li></ul>
+<div class="m-buttons">
+<button class="m-buy">Comprar Lite - $15</button>
+<button class="m-demo">Ver Demo</button>
+</div>
+</div>
 </div>
 </div>
 
+<!-- PRO -->
 <div id="modal-pro" class="modal" onclick="if(event.target==this)closeModal('pro')">
 <div class="modal-box">
 <div class="m-left">
@@ -158,10 +186,21 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 <div class="m-thumb" onclick="changeMain('pro','pro-5.jpg')"><img src="pro-5.jpg" onerror="this.parentElement.style.display='none'"></div>
 </div>
 </div>
-<div class="m-right"><button class="close" onclick="closeModal('pro')">✕</button><h3>Pelisplusgo Pro ★ Más Vendida</h3><div class="m-price">$25</div><p class="m-desc">Con multi-perfiles Alex, Sam, Mia, detalle de película con Hope, admin con analytics.</p><ul class="m-list"><li>40 Pantallas Premium completas</li><li>Admin Dashboard con gráficas reales</li><li>Multi-perfiles + Watchlist + Favoritos</li><li>React Native + Flutter + Figma</li><li>Player HDR 4K + Soporte 12 meses</li></ul><button class="m-buy">Comprar Pro - $25</button></div>
+<div class="m-right">
+<button class="close" onclick="closeModal('pro')">✕</button>
+<h3>Pelisplusgo Pro ★ Más Vendida</h3>
+<div class="m-price">$25</div>
+<p class="m-desc">Con multi-perfiles Alex, Sam, Mia, detalle de película con Hope, admin con analytics.</p>
+<ul class="m-list"><li>40 Pantallas Premium completas</li><li>Admin Dashboard con gráficas reales</li><li>Multi-perfiles + Watchlist + Favoritos</li><li>React Native + Flutter + Figma</li><li>Player HDR 4K + Soporte 12 meses</li></ul>
+<div class="m-buttons">
+<button class="m-buy">Comprar Pro - $25</button>
+<button class="m-demo">Ver Demo</button>
+</div>
+</div>
 </div>
 </div>
 
+<!-- CINEMA+ -->
 <div id="modal-cinema" class="modal" onclick="if(event.target==this)closeModal('cinema')">
 <div class="modal-box">
 <div class="m-left">
@@ -174,7 +213,17 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 <div class="m-thumb" onclick="changeMain('cinema','cinema-5.jpg')"><img src="cinema-5.jpg" onerror="this.parentElement.style.display='none'"></div>
 </div>
 </div>
-<div class="m-right"><button class="close" onclick="closeModal('cinema')">✕</button><h3>Pelisplusgo Cinema+</h3><div class="m-price" style="color:#c9a86a">$35</div><p class="m-desc">Todo lo de Pro + Live TV con HBO, Sports, News 24, Trending y Chromecast.</p><ul class="m-list"><li>60+ Pantallas Premium negocio</li><li>Live TV 12 canales</li><li>Chromecast + Descargas offline</li><li>Super Admin Panel completo</li><li>Licencia comercial para reventa</li></ul><button class="m-buy" style="background:#c9a86a">Comprar Cinema+ - $35</button></div>
+<div class="m-right">
+<button class="close" onclick="closeModal('cinema')">✕</button>
+<h3>Pelisplusgo Cinema+</h3>
+<div class="m-price" style="color:#c9a86a">$35</div>
+<p class="m-desc">Todo lo de Pro + Live TV con HBO, Sports, News 24, Trending y Chromecast.</p>
+<ul class="m-list"><li>60+ Pantallas Premium negocio</li><li>Live TV 12 canales</li><li>Chromecast + Descargas offline</li><li>Super Admin Panel completo</li><li>Licencia comercial para reventa</li></ul>
+<div class="m-buttons">
+<button class="m-buy" style="background:#c9a86a">Comprar Cinema+ - $35</button>
+<button class="m-demo">Ver Demo</button>
+</div>
+</div>
 </div>
 </div>
 
