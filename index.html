@@ -1,24 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pelisplusgo Store - By Mendez</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden}
+.header{position:sticky;top:0;z-index:100;width:100vw;height:68px;display:flex;justify-content:space-between;align-items:center;padding:0 5%;background:#0a0e1c;border-bottom:1px solid rgba(255,255,255,0.08)}
+.logo{font-weight:900;font-size:19px;display:flex;align-items:center;gap:10px}
+.logo-icon{width:36px;height:36px;background:#2ec4ff;color:#000;display:grid;place-items:center;border-radius:8px;font-weight:900}
+.nav{display:flex;gap:28px;font-size:14px;align-items:center}
+.nav a{color:#9aa4b8;text-decoration:none}
+.btn-buy{border:1.5px solid #5effff;color:#5effff;background:transparent;padding:9px 22px;border-radius:999px;font-weight:800;font-size:13px;cursor:pointer}
+.hero{width:100vw;min-height:calc(100vh - 68px);display:grid;grid-template-columns:1fr 1fr;padding:0 5%;align-items:center;background:#070a15}
+.hero-left h1{font-size:64px;line-height:0.98;letter-spacing:-2px;font-weight:900}
+.hero-left p{color:#8b93a8;margin:22px 0;font-size:15px;line-height:1.7;max-width:620px}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin:26px 0}
+.tag{background:#151a2c;border:1px solid rgba(255,255,255,0.12);padding:9px 15px;border-radius:10px;font-size:12px;color:#aab2c8;font-weight:600}
+.btns{display:flex;gap:14px;margin-top:30px}
+.btn-demo{background:#7af4f4;color:#070a15;padding:16px 28px;border-radius:12px;border:none;font-weight:900;font-size:14px;cursor:pointer}
+.btn-down{border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.06);color:#fff;padding:16px 28px;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer}
+.phone-wrap{display:flex;justify-content:center;align-items:center}
+.phone{width:440px;height:860px;background:#000;border-radius:48px;border:12px solid #1b2335;padding:7px;box-shadow:0 40px 120px rgba(0,0,0,.9)}
+.phone img{width:100%;height:100%;object-fit:cover;border-radius:38px}
+.section{padding:90px 5%;background:#080c1a}
+.section h2{font-size:42px;font-weight:900;text-align:center}
+.sub{text-align:center;color:#6b7288;font-size:15px;margin:14px 0 55px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:1280px;margin:0 auto}
+.pcard{background:#11182c;border:1px solid rgba(255,255,255,0.08);border-radius:20px;overflow:hidden}
+.pcard.featured{border:1.5px solid #5effff;transform:scale(1.03);box-shadow:0 0 50px rgba(94,255,255,0.15)}
+.pcard-badge{background:#5effff;color:#000;text-align:center;padding:7px;font-size:11px;font-weight:900}
+.pcard-icon{height:170px;display:grid;place-items:center;font-weight:900;letter-spacing:3px;font-size:14px;color:#5effff;background:radial-gradient(circle at top,rgba(94,255,255,0.18),transparent 70%),linear-gradient(135deg,#0f1a2e,#1a2a4a)}
+.pcard-info{padding:24px}
+.pcard-info h3{font-size:19px}
+.pcard-info p{color:#7b8399;font-size:13.5px;margin:10px 0 18px}
+.pfeat{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.pfeat span{font-size:11px;background:rgba(255,255,255,0.06);padding:6px 11px;border-radius:20px;color:#aab2c8}
+.pfooter{display:flex;justify-content:space-between;align-items:center}
+.btn-primary{background:#5effff;color:#000;padding:12px 20px;border-radius:10px;border:none;font-weight:900;font-size:13px;cursor:pointer}
+.modal{position:fixed;inset:0;background:rgba(3,6,14,0.88);backdrop-filter:blur(22px);z-index:999;display:none;place-items:center;padding:20px}
+.modal.active{display:grid}
+.modal-box{width:92vw;max-width:1280px;min-height:700px;background:#10182f;border:1px solid rgba(255,255,255,0.08);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1.35fr 0.65fr;box-shadow:0 40px 140px rgba(0,0,0,0.9);animation:pop .25s ease}
+@keyframes pop{from{transform:scale(.96);opacity:0} to{transform:scale(1);opacity:1}}
+.m-left{padding:24px;background:#0a0f20;display:grid;gap:14px;align-content:start}
+.m-main{height:440px;border-radius:16px;background:linear-gradient(135deg,#0f1a2e,#1e2f4a);border:1px solid rgba(255,255,255,0.08);display:grid;place-items:center;color:#5effff;font-weight:900;letter-spacing:3px;overflow:hidden;position:relative}
+.m-main img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.m-main .ph{position:relative;z-index:1;text-align:center}
+.m-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.m-thumb{height:135px;border-radius:12px;background:#111a2f;border:1px solid rgba(255,255,255,0.06);display:grid;place-items:center;color:#5a647e;font-size:11px;font-weight:700;overflow:hidden;position:relative}
+.m-thumb img{width:100%;height:100%;object-fit:cover}
+.m-right{padding:36px;position:relative;display:flex;flex-direction:column;justify-content:center}
+.close{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);color:#fff;cursor:pointer}
+.m-price{font-size:40px;font-weight:900;color:#5effff;margin:16px 0}
+.m-desc{color:#8b93a8;font-size:15px;line-height:1.7;margin-bottom:20px}
+.m-list{list-style:none}.m-list li{font-size:14px;color:#cbd5e1;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.06)}.m-list li::before{content:"✓ ";color:#5effff;font-weight:900}
+.m-buy{width:100%;margin-top:26px;padding:18px;background:#5effff;color:#000;border:none;border-radius:12px;font-weight:900;font-size:16px;cursor:pointer}
+@media(max-width:1050px){.hero{grid-template-columns:1fr;padding:40px 5%}.hero-left h1{font-size:38px}.phone{width:340px;height:680px}.products,.modal-box{grid-template-columns:1fr}.modal-box{min-height:auto}.m-main{height:300px}.nav{display:none}}
+</style>
+</head>
+<body>
+
+<div class="header">
+<div class="logo"><div class="logo-icon">▶</div>Pelisplusgo Store</div>
+<div class="nav"><a href="#">Plantillas</a><a href="#">Características</a><a href="#">Documentación</a><a href="#">Soporte</a><button class="btn-buy">Comprar Template</button></div>
+</div>
+
+<div class="hero">
+<div class="hero-left">
+<h1>La Plantilla de tu Propia App de Peliculas Tipo Netflix</h1>
+<p>Diseño premium y personalizable para lanzar tu app de streaming de películas. Código limpio, interfaz moderna con glassmorphism. Listo para iOS y Android — sin suscripciones, solo una compra única.</p>
+<div class="tags"><div class="tag">UI Oscura • Glassmorphism</div><div class="tag">Grid de Películas Personalizable</div><div class="tag">React Native / Flutter / Swift</div></div>
+<div class="btns"><button class="btn-demo">Ver Demo en Vivo</button><button class="btn-down">Descargar Template</button></div>
+</div>
+<div class="phone-wrap"><div class="phone"><img src="app.jpg" alt="Hope"></div></div>
+</div>
+
+<div class="section">
+<h2>Elige tu Plantilla</h2>
+<p class="sub">Pago único, tuya para siempre. Cada botón abre su detalle en la misma página.</p>
+<div class="products">
+<div class="pcard"><div class="pcard-icon">PELISPLUSGO STORE</div><div class="pcard-info"><h3>Pelisplusgo Lite</h3><p>Para empezar, 20 pantallas, player HD y buscador.</p><div class="pfeat"><span>20 Pantallas</span><span>Player HD</span></div><div class="pfooter"><b style="color:#5effff;font-size:23px">$15</b><button onclick="openModal('lite')" class="btn-primary">Ver Detalle</button></div></div></div>
+<div class="pcard featured"><div class="pcard-badge">★ MÁS VENDIDA</div><div class="pcard-icon">PELISPLUSGO STORE</div><div class="pcard-info"><h3>Pelisplusgo Pro</h3><p>40 pantallas, admin, multi-perfiles.</p><div class="pfeat"><span>40 Pantallas</span><span>Admin</span></div><div class="pfooter"><b style="color:#5effff;font-size:23px">$25</b><button onclick="openModal('pro')" class="btn-primary">Ver Detalle</button></div></div></div>
+<div class="pcard"><div class="pcard-icon" style="color:#c9a86a">PELISPLUSGO STORE</div><div class="pcard-info"><h3>Pelisplusgo Cinema+</h3><p>60+ pantallas, Live TV, Chromecast.</p><div class="pfeat"><span>60+ Pantallas</span><span>Live TV</span></div><div class="pfooter"><b style="color:#5effff;font-size:23px">$35</b><button onclick="openModal('cinema')" class="btn-primary">Ver Detalle</button></div></div></div>
+</div>
+</div>
+
 <!-- MODAL LITE CON FOTOS -->
 <div id="modal-lite" class="modal" onclick="if(event.target==this)closeModal('lite')">
 <div class="modal-box">
 <div class="m-left">
 <div class="m-main">
-<img src="lite-1.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'" style="width:100%;height:100%;object-fit:cover">
-<div style="display:none;place-items:center;width:100%;height:100%;font-weight:900;letter-spacing:3px;color:#5effff">PELISPLUSGO LITE<br><small style="font-size:11px;color:#8b93a8">Sube lite-1.jpg</small></div>
+<img src="lite-1.jpg" onerror="this.style.display='none'">
+<div class="ph">PELISPLUSGO LITE<br><small style="font-size:11px;color:#8b93a8">lite-1.jpg</small></div>
 </div>
 <div class="m-thumbs">
-<div class="m-thumb"><img src="lite-2.jpg" onerror="this.parentElement.innerHTML='LITE-2'" style="width:100%;height:100%;object-fit:cover"></div>
-<div class="m-thumb"><img src="lite-3.jpg" onerror="this.parentElement.innerHTML='LITE-3'" style="width:100%;height:100%;object-fit:cover"></div>
-<div class="m-thumb"><img src="lite-4.jpg" onerror="this.parentElement.innerHTML='LITE-4'" style="width:100%;height:100%;object-fit:cover"></div>
-<div class="m-thumb"><img src="lite-5.jpg" onerror="this.parentElement.innerHTML='LITE-5'" style="width:100%;height:100%;object-fit:cover"></div>
+<div class="m-thumb"><img src="lite-2.jpg" onerror="this.style.display='none'"><span>LITE-2</span></div>
+<div class="m-thumb"><img src="lite-3.jpg" onerror="this.style.display='none'"><span>LITE-3</span></div>
+<div class="m-thumb"><img src="lite-4.jpg" onerror="this.style.display='none'"><span>LITE-4</span></div>
+<div class="m-thumb"><img src="lite-5.jpg" onerror="this.style.display='none'"><span>LITE-5</span></div>
 </div>
 </div>
 <div class="m-right">
 <button class="close" onclick="closeModal('lite')">✕</button>
 <h3>Pelisplusgo Lite</h3>
 <div class="m-price">$15</div>
-<p class="m-desc">Ideal para empezar. Diseño Netflix con Hope, buscador y player. 60fps fluido.</p>
-<ul class="m-list"><li>20 Pantallas Figma + React Native</li><li>Player HD + Buscador + Categorías</li><li>Glassmorphism + Dark Mode premium</li><li>Doc Play Store</li></ul>
+<p class="m-desc">Ideal para empezar. Diseño Netflix con Hope, buscador y player. 60fps fluido. Código limpio listo para Play Store.</p>
+<ul class="m-list"><li>20 Pantallas Figma + React Native</li><li>Player HD + Buscador + Categorías</li><li>Glassmorphism + Dark Mode premium</li><li>Documentación completa Play Store</li><li>Soporte 3 meses incluido</li></ul>
 <button class="m-buy">Comprar Lite - $15</button>
 </div>
 </div>
@@ -29,22 +117,22 @@
 <div class="modal-box">
 <div class="m-left">
 <div class="m-main">
-<img src="pro-1.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'" style="width:100%;height:100%;object-fit:cover">
-<div style="display:none;place-items:center;width:100%;height:100%;font-weight:900;letter-spacing:3px;color:#5effff">PELISPLUSGO PRO<br><small style="font-size:11px;color:#8b93a8">Sube pro-1.jpg</small></div>
+<img src="pro-1.jpg" onerror="this.style.display='none'">
+<div class="ph">PELISPLUSGO PRO<br><small style="font-size:11px;color:#8b93a8">pro-1.jpg</small></div>
 </div>
 <div class="m-thumbs">
-<div class="m-thumb"><img src="pro-2.jpg" onerror="this.parentElement.innerHTML='PRO-2'" style="width:100%;height:100%;object-fit:cover"></div>
-<div class="m-thumb"><img src="pro-3.jpg" onerror="this.parentElement.innerHTML='PRO-3'" style="width:100%;height:100%;object-fit:cover"></div>
-<div class="m-thumb"><img src="pro-4.jpg" onerror="this.parentElement.innerHTML='PRO-4'" style="width:100%;height:100%;object-fit:cover"></div>
-<div class="m-thumb"><img src="pro-5.jpg" onerror="this.parentElement.innerHTML='PRO-5'" style="width:100%;height:100%;object-fit:cover"></div>
+<div class="m-thumb"><img src="pro-2.jpg" onerror="this.style.display='none'"><span>PRO-2</span></div>
+<div class="m-thumb"><img src="pro-3.jpg" onerror="this.style.display='none'"><span>PRO-3</span></div>
+<div class="m-thumb"><img src="pro-4.jpg" onerror="this.style.display='none'"><span>PRO-4</span></div>
+<div class="m-thumb"><img src="pro-5.jpg" onerror="this.style.display='none'"><span>PRO-5</span></div>
 </div>
 </div>
 <div class="m-right">
 <button class="close" onclick="closeModal('pro')">✕</button>
 <h3>Pelisplusgo Pro ★ Más Vendida</h3>
 <div class="m-price">$25</div>
-<p class="m-desc">Con multi-perfiles Alex/Sam/Mia, admin con analytics, watchlist y player 4K.</p>
-<ul class="m-list"><li>40 Pantallas Premium</li><li>Admin Dashboard completo</li><li>Multi-perfiles + Watchlist</li><li>Player HDR 4K</li></ul>
+<p class="m-desc">Con multi-perfiles Alex, Sam, Mia, detalle de película con Hope, admin con analytics de streams, usuarios y revenue.</p>
+<ul class="m-list"><li>40 Pantallas Premium completas</li><li>Admin Dashboard con gráficas reales</li><li>Multi-perfiles + Watchlist + Favoritos</li><li>React Native + Flutter + Figma</li><li>Player HDR 4K + Soporte 12 meses</li></ul>
 <button class="m-buy">Comprar Pro - $25</button>
 </div>
 </div>
@@ -55,23 +143,31 @@
 <div class="modal-box">
 <div class="m-left">
 <div class="m-main">
-<img src="cinema-1.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid'" style="width:100%;height:100%;object-fit:cover">
-<div style="display:none;place-items:center;width:100%;height:100%;font-weight:900;letter-spacing:3px;color:#c9a86a">PELISPLUSGO CINEMA+<br><small style="font-size:11px;color:#8b93a8">Sube cinema-1.jpg</small></div>
+<img src="cinema-1.jpg" onerror="this.style.display='none'">
+<div class="ph" style="color:#c9a86a">PELISPLUSGO CINEMA+<br><small style="font-size:11px;color:#8b93a8">cinema-1.jpg</small></div>
 </div>
 <div class="m-thumbs">
-<div class="m-thumb"><img src="cinema-2.jpg" onerror="this.parentElement.innerHTML='CINEMA-2'" style="width:100%;height:100%;object-fit:cover"></div>
-<div class="m-thumb"><img src="cinema-3.jpg" onerror="this.parentElement.innerHTML='CINEMA-3'" style="width:100%;height:100%;object-fit:cover"></div>
-<div class="m-thumb"><img src="cinema-4.jpg" onerror="this.parentElement.innerHTML='CINEMA-4'" style="width:100%;height:100%;object-fit:cover"></div>
-<div class="m-thumb"><img src="cinema-5.jpg" onerror="this.parentElement.innerHTML='CINEMA-5'" style="width:100%;height:100%;object-fit:cover"></div>
+<div class="m-thumb"><img src="cinema-2.jpg" onerror="this.style.display='none'"><span>CINEMA-2</span></div>
+<div class="m-thumb"><img src="cinema-3.jpg" onerror="this.style.display='none'"><span>CINEMA-3</span></div>
+<div class="m-thumb"><img src="cinema-4.jpg" onerror="this.style.display='none'"><span>CINEMA-4</span></div>
+<div class="m-thumb"><img src="cinema-5.jpg" onerror="this.style.display='none'"><span>CINEMA-5</span></div>
 </div>
 </div>
 <div class="m-right">
 <button class="close" onclick="closeModal('cinema')">✕</button>
 <h3>Pelisplusgo Cinema+</h3>
 <div class="m-price" style="color:#c9a86a">$35</div>
-<p class="m-desc">Todo lo de Pro + Live TV, Trending y Chromecast.</p>
-<ul class="m-list"><li>60+ Pantallas Premium</li><li>Live TV 12 canales</li><li>Chromecast + Descargas</li><li>Super Admin + Licencia comercial</li></ul>
+<p class="m-desc">Todo lo de Pro + Live TV con HBO, Sports, News 24, Trending in Cinemas, Continue Watching con barra de progreso y Chromecast.</p>
+<ul class="m-list"><li>60+ Pantallas Premium negocio</li><li>Live TV 12 canales + Contador viewers</li><li>Chromecast + Descargas offline</li><li>Super Admin Panel completo</li><li>Licencia comercial para reventa</li></ul>
 <button class="m-buy" style="background:#c9a86a">Comprar Cinema+ - $35</button>
 </div>
 </div>
 </div>
+
+<script>
+function openModal(id){document.getElementById('modal-'+id).classList.add('active');document.body.style.overflow='hidden'}
+function closeModal(id){document.getElementById('modal-'+id).classList.remove('active');document.body.style.overflow=''}
+</script>
+
+</body>
+</html>
