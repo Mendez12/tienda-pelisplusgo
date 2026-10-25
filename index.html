@@ -6,62 +6,64 @@
 <title>Pelisplusgo Store - By Mendez</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden}
-.header{position:sticky;top:0;z-index:100;width:100%;display:flex;justify-content:space-between;align-items:center;padding:14px 4%;background:rgba(10,14,28,0.95);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.08)}
-.logo{font-weight:800;font-size:15px;display:flex;align-items:center;gap:8px;letter-spacing:0.2px}
-.logo-icon{width:28px;height:28px;background:#2ec4ff;display:grid;place-items:center;border-radius:6px;color:#000;font-size:12px}
-.nav{display:flex;gap:22px;font-size:13px;color:#9aa4b8;align-items:center}
-.nav a{color:#9aa4b8;text-decoration:none}
-.btn-buy{border:1px solid #5effff;color:#5effff;background:transparent;padding:7px 16px;border-radius:999px;font-weight:700;font-size:12px;cursor:pointer}
+body{background:#0a0e1f;color:#fff;font-family:Inter,system-ui;overflow-x:hidden}
 
-/* HERO EXACTO DE TU CAPTURA */
-.hero{width:100%;min-height:85vh;display:grid;grid-template-columns:1.1fr 0.9fr;gap:40px;padding:60px 4%;align-items:center;max-width:1400px;margin:0 auto}
-.hero-left h1{font-size:54px;line-height:1.05;letter-spacing:-1.5px;font-weight:900;max-width:600px}
-.hero-left p{color:#8b93a8;margin:18px 0;font-size:13.5px;line-height:1.6;max-width:560px}
-.tags{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
-.tag{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);padding:6px 12px;border-radius:8px;font-size:11px;color:#aab2c8}
-.btns{display:flex;gap:12px;margin-top:24px}
-.btn-demo{background:#7af4f4;color:#070a15;padding:13px 24px;border-radius:10px;border:none;font-weight:800;font-size:13px;cursor:pointer}
-.btn-down{border:1px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);color:#fff;padding:13px 24px;border-radius:10px;font-weight:600;font-size:13px;cursor:pointer}
-.phone{width:400px;height:780px;background:#000;border-radius:44px;border:10px solid #1b2335;padding:6px;box-shadow:0 30px 80px rgba(0,0,0,.7);margin:0 auto;justify-self:end}
-.phone img{width:100%;height:100%;object-fit:cover;border-radius:34px}
+/* CABECERA GRANDE - YA NO PEQUEÑA */
+.header{position:sticky;top:0;z-index:100;width:100vw;height:64px;display:flex;justify-content:space-between;align-items:center;padding:0 5%;background:#0a0e1c;border-bottom:1px solid rgba(255,255,255,0.08)}
+.logo{font-weight:900;font-size:18px;display:flex;align-items:center;gap:10px;letter-spacing:0.3px}
+.logo-icon{width:34px;height:34px;background:#2ec4ff;color:#000;display:grid;place-items:center;border-radius:8px;font-size:14px;font-weight:900}
+.nav{display:flex;gap:28px;font-size:14px;color:#9aa4b8;align-items:center}
+.nav a{color:#9aa4b8;text-decoration:none;font-weight:500}
+.btn-buy{border:1.5px solid #5effff;color:#5effff;background:transparent;padding:8px 20px;border-radius:999px;font-weight:800;font-size:13px;cursor:pointer}
+
+/* HERO QUE ABARCA TODA LA PANTALLA - LETRAS GRANDES */
+.hero{width:100vw;min-height:calc(100vh - 64px);display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0 5%;align-items:center;background:#070a15}
+.hero-left{padding-right:40px}
+.hero-left h1{font-size:62px;line-height:1;letter-spacing:-2px;font-weight:900;text-transform:none}
+.hero-left p{color:#8b93a8;margin:22px 0;font-size:15px;line-height:1.7;max-width:600px}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
+.tag{background:#151a2c;border:1px solid rgba(255,255,255,0.12);padding:8px 14px;border-radius:10px;font-size:12px;color:#aab2c8;font-weight:600}
+.btns{display:flex;gap:14px;margin-top:28px}
+.btn-demo{background:#7af4f4;color:#070a15;padding:15px 26px;border-radius:12px;border:none;font-weight:900;font-size:14px;cursor:pointer}
+.btn-down{border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.06);color:#fff;padding:15px 26px;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer}
+.phone-wrap{display:flex;justify-content:center;align-items:center;height:100%}
+.phone{width:420px;height:820px;background:#000;border-radius:46px;border:12px solid #1b2335;padding:6px;box-shadow:0 40px 100px rgba(0,0,0,.8)}
+.phone img{width:100%;height:100%;object-fit:cover;border-radius:36px}
 
 /* PRODUCTOS */
-.section{padding:70px 4%;max-width:1300px;margin:0 auto}
-.section h2{font-size:36px;font-weight:900;text-align:center;margin-bottom:10px}
-.sub{text-align:center;color:#6b7288;font-size:14px;margin-bottom:40px}
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1200px;margin:0 auto}
-.pcard{background:#11182c;border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden}
-.pcard.featured{border:1.5px solid #5effff;transform:scale(1.02)}
-.pcard-badge{background:#5effff;color:#070a15;text-align:center;padding:6px;font-size:11px;font-weight:900}
-.pcard-icon{height:140px;display:grid;place-items:center;font-weight:900;letter-spacing:2.5px;font-size:13px;color:#5effff;background:radial-gradient(circle at top,rgba(94,255,255,0.15),transparent 70%),linear-gradient(135deg,#0f1a2e,#1a2a4a)}
-.pcard-info{padding:20px}
-.pcard-info h3{font-size:16px;font-weight:800}
-.pcard-info p{color:#8b93a8;font-size:12px;line-height:1.5;margin:8px 0 14px}
-.pfeat{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
-.pfeat span{font-size:11px;color:#aab2c8;background:rgba(255,255,255,0.06);padding:4px 8px;border-radius:20px}
+.section{padding:80px 5%;max-width:100%;background:#080c1a}
+.section h2{font-size:40px;font-weight:900;text-align:center}
+.sub{text-align:center;color:#6b7288;font-size:15px;margin:12px 0 50px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1250px;margin:0 auto}
+.pcard{background:#11182c;border:1px solid rgba(255,255,255,0.08);border-radius:20px;overflow:hidden}
+.pcard.featured{border:1.5px solid #5effff;transform:scale(1.03)}
+.pcard-badge{background:#5effff;color:#000;text-align:center;padding:7px;font-size:11px;font-weight:900}
+.pcard-icon{height:160px;display:grid;place-items:center;font-weight:900;letter-spacing:3px;font-size:14px;color:#5effff;background:radial-gradient(circle at top,rgba(94,255,255,0.18),transparent 70%),linear-gradient(135deg,#0f1a2e,#1a2a4a)}
+.pcard-info{padding:22px}
+.pcard-info h3{font-size:18px}
+.pcard-info p{color:#7b8399;font-size:13px;margin:10px 0 16px;line-height:1.5}
+.pfeat{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.pfeat span{font-size:11px;background:rgba(255,255,255,0.06);padding:5px 10px;border-radius:20px;color:#aab2c8}
 .pfooter{display:flex;justify-content:space-between;align-items:center}
-.btn-primary{background:#5effff;color:#070a15;padding:10px 16px;border-radius:8px;border:none;font-weight:800;font-size:12px;cursor:pointer}
+.btn-primary{background:#5effff;color:#000;padding:11px 18px;border-radius:10px;border:none;font-weight:900;font-size:13px;cursor:pointer}
 
-/* MODAL MISMA PAGINA - NO ABAJO */
+/* MODAL MISMA PAGINA */
 .modal{position:fixed;inset:0;background:rgba(3,6,14,0.88);backdrop-filter:blur(20px);z-index:999;display:none;place-items:center;padding:16px}
 .modal.active{display:grid}
-.modal-box{width:100%;max-width:1050px;background:#10182f;border:1px solid rgba(255,255,255,0.08);border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1.15fr 0.85fr;box-shadow:0 40px 120px rgba(0,0,0,0.8);animation:pop .25s ease}
+.modal-box{width:100%;max-width:1100px;background:#10182f;border:1px solid rgba(255,255,255,0.08);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1.2fr 0.8fr;animation:pop .25s ease}
 @keyframes pop{from{transform:scale(.96);opacity:0} to{transform:scale(1);opacity:1}}
-.m-left{padding:18px;background:#0a0f20;display:grid;gap:10px}
-.m-main{height:340px;border-radius:14px;background:linear-gradient(135deg,#0f1a2e,#1e2f4a);border:1px solid rgba(255,255,255,0.08);display:grid;place-items:center;color:#5effff;font-weight:900;letter-spacing:2px}
+.m-left{padding:20px;background:#0a0f20;display:grid;gap:12px}
+.m-main{height:360px;border-radius:16px;background:linear-gradient(135deg,#0f1a2e,#1e2f4a);border:1px solid rgba(255,255,255,0.08);display:grid;place-items:center;color:#5effff;font-weight:900;letter-spacing:3px}
 .m-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.m-thumb{height:105px;border-radius:10px;background:#111a2f;border:1px solid rgba(255,255,255,0.06);display:grid;place-items:center;color:#5a647e;font-size:10px;font-weight:700}
-.m-right{padding:26px;position:relative}
-.close{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);color:#fff;cursor:pointer}
-.m-price{font-size:32px;font-weight:900;color:#5effff;margin:10px 0}
-.m-desc{color:#8b93a8;font-size:13px;line-height:1.6;margin-bottom:14px}
-.m-list{list-style:none}
-.m-list li{font-size:13px;color:#cbd5e1;padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
-.m-list li::before{content:"✓ ";color:#5effff;font-weight:900}
-.m-buy{width:100%;margin-top:16px;padding:14px;background:#5effff;color:#000;border:none;border-radius:10px;font-weight:900;font-size:14px;cursor:pointer}
+.m-thumb{height:110px;border-radius:12px;background:#111a2f;border:1px solid rgba(255,255,255,0.06);display:grid;place-items:center;color:#5a647e;font-size:10px;font-weight:700}
+.m-right{padding:28px;position:relative}
+.close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.1);color:#fff;cursor:pointer}
+.m-price{font-size:36px;font-weight:900;color:#5effff;margin:12px 0}
+.m-desc{color:#8b93a8;font-size:14px;line-height:1.6;margin-bottom:16px}
+.m-list{list-style:none}.m-list li{font-size:13px;color:#cbd5e1;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.05)}.m-list li::before{content:"✓ ";color:#5effff;font-weight:900}
+.m-buy{width:100%;margin-top:18px;padding:16px;background:#5effff;color:#000;border:none;border-radius:12px;font-weight:900;font-size:15px;cursor:pointer}
 
-@media(max-width:900px){.hero{grid-template-columns:1fr;padding:30px 5%}.hero-left h1{font-size:32px}.products,.modal-box{grid-template-columns:1fr}.phone{width:310px;height:620px;justify-self:center}}
+@media(max-width:1000px){.hero{grid-template-columns:1fr;min-height:auto;padding:40px 5%;gap:30px}.hero-left h1{font-size:38px}.hero-left{padding-right:0}.phone{width:330px;height:660px}.products,.modal-box{grid-template-columns:1fr}.pcard.featured{transform:none}.nav{gap:12px;font-size:12px}}
 </style>
 </head>
 <body>
@@ -78,20 +80,20 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 <div class="tags"><div class="tag">UI Oscura • Glassmorphism</div><div class="tag">Grid de Películas Personalizable</div><div class="tag">React Native / Flutter / Swift</div></div>
 <div class="btns"><button class="btn-demo">Ver Demo en Vivo</button><button class="btn-down">Descargar Template</button></div>
 </div>
-<div class="phone"><img src="app.jpg" alt="Hope"></div>
+<div class="phone-wrap"><div class="phone"><img src="app.jpg" alt="Hope"></div></div>
 </div>
 
 <div class="section">
 <h2>Elige tu Plantilla</h2>
 <p class="sub">Pago único, tuya para siempre. Cada botón abre su detalle en la misma página.</p>
 <div class="products">
-<div class="pcard"><div class="pcard-icon">PELISPLUSGO STORE</div><div class="pcard-info"><h3>Pelisplusgo Lite</h3><p>Para empezar, 20 pantallas, player HD y buscador.</p><div class="pfeat"><span>20 Pantallas</span><span>Player HD</span></div><div class="pfooter"><b style="color:#5effff">$15</b><button onclick="openModal('lite')" class="btn-primary">Ver Detalle</button></div></div></div>
-<div class="pcard featured"><div class="pcard-badge">★ MÁS VENDIDA</div><div class="pcard-icon">PELISPLUSGO STORE</div><div class="pcard-info"><h3>Pelisplusgo Pro</h3><p>40 pantallas, admin, multi-perfiles.</p><div class="pfeat"><span>40 Pantallas</span><span>Admin</span></div><div class="pfooter"><b style="color:#5effff">$25</b><button onclick="openModal('pro')" class="btn-primary">Ver Detalle</button></div></div></div>
-<div class="pcard"><div class="pcard-icon" style="color:#c9a86a">PELISPLUSGO STORE</div><div class="pcard-info"><h3>Pelisplusgo Cinema+</h3><p>60+ pantallas, Live TV, Chromecast.</p><div class="pfeat"><span>60+ Pantallas</span><span>Live TV</span></div><div class="pfooter"><b style="color:#5effff">$35</b><button onclick="openModal('cinema')" class="btn-primary">Ver Detalle</button></div></div></div>
+<div class="pcard"><div class="pcard-icon">PELISPLUSGO STORE</div><div class="pcard-info"><h3>Pelisplusgo Lite</h3><p>Para empezar, 20 pantallas, player HD y buscador.</p><div class="pfeat"><span>20 Pantallas</span><span>Player HD</span></div><div class="pfooter"><b style="color:#5effff;font-size:22px">$15</b><button onclick="openModal('lite')" class="btn-primary">Ver Detalle</button></div></div></div>
+<div class="pcard featured"><div class="pcard-badge">★ MÁS VENDIDA</div><div class="pcard-icon">PELISPLUSGO STORE</div><div class="pcard-info"><h3>Pelisplusgo Pro</h3><p>40 pantallas, admin, multi-perfiles.</p><div class="pfeat"><span>40 Pantallas</span><span>Admin</span></div><div class="pfooter"><b style="color:#5effff;font-size:22px">$25</b><button onclick="openModal('pro')" class="btn-primary">Ver Detalle</button></div></div></div>
+<div class="pcard"><div class="pcard-icon" style="color:#c9a86a">PELISPLUSGO STORE</div><div class="pcard-info"><h3>Pelisplusgo Cinema+</h3><p>60+ pantallas, Live TV, Chromecast.</p><div class="pfeat"><span>60+ Pantallas</span><span>Live TV</span></div><div class="pfooter"><b style="color:#5effff;font-size:22px">$35</b><button onclick="openModal('cinema')" class="btn-primary">Ver Detalle</button></div></div></div>
 </div>
 </div>
 
-<!-- MODALES MISMOS QUE ANTES -->
+<!-- MODALES -->
 <div id="modal-lite" class="modal" onclick="if(event.target==this)closeModal('lite')">
 <div class="modal-box"><div class="m-left"><div class="m-main">PELISPLUSGO LITE<br><small style="font-size:10px;color:#8b93a8">lite-1.jpg</small></div><div class="m-thumbs"><div class="m-thumb">LITE-2</div><div class="m-thumb">LITE-3</div><div class="m-thumb">LITE-4</div><div class="m-thumb">LITE-5</div></div></div><div class="m-right"><button class="close" onclick="closeModal('lite')">✕</button><h3>Pelisplusgo Lite</h3><div class="m-price">$15</div><p class="m-desc">Ideal para empezar. Diseño Netflix con Hope, buscador y player. 60fps fluido.</p><ul class="m-list"><li>20 Pantallas Figma + React Native</li><li>Player HD + Buscador</li><li>Glassmorphism + Dark Mode</li><li>Doc Play Store</li></ul><button class="m-buy">Comprar Lite - $15</button></div></div>
 </div>
