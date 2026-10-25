@@ -44,9 +44,10 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 .modal-box{width:92vw;max-width:1280px;min-height:700px;background:#10182f;border:1px solid rgba(255,255,255,0.08);border-radius:24px;overflow:hidden;display:grid;grid-template-columns:1.35fr 0.65fr;box-shadow:0 40px 140px rgba(0,0,0,0.9);animation:pop .25s ease}
 @keyframes pop{from{transform:scale(.96);opacity:0} to{transform:scale(1);opacity:1}}
 .m-left{padding:24px;background:#0a0f20;display:grid;gap:14px;align-content:start}
-.m-main{height:440px;border-radius:16px;background:linear-gradient(135deg,#0f1a2e,#1e2f4a);border:1px solid rgba(255,255,255,0.08);display:grid;place-items:center;color:#5effff;font-weight:900;letter-spacing:3px;overflow:hidden;position:relative}
-.m-main img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.m-main .ph{position:relative;z-index:1;text-align:center}
+.m-main{width:100%;background:#000;border-radius:16px;border:1px solid rgba(255,255,255,0.08);overflow:hidden;display:grid;place-items:center;position:relative;min-height:440px}
+.m-main img{width:100%;height:auto;max-height:620px;object-fit:contain;display:block;background:#000}
+.m-main .ph{position:absolute;z-index:2;text-align:center;font-weight:900;letter-spacing:2px;color:#5effff}
+.m-main:has(img[src]:not([src=""])) .ph{display:none}
 .m-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .m-thumb{height:135px;border-radius:12px;background:#111a2f;border:1px solid rgba(255,255,255,0.06);display:grid;place-items:center;color:#5a647e;font-size:11px;font-weight:700;overflow:hidden;position:relative}
 .m-thumb img{width:100%;height:100%;object-fit:cover}
@@ -56,7 +57,7 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 .m-desc{color:#8b93a8;font-size:15px;line-height:1.7;margin-bottom:20px}
 .m-list{list-style:none}.m-list li{font-size:14px;color:#cbd5e1;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.06)}.m-list li::before{content:"✓ ";color:#5effff;font-weight:900}
 .m-buy{width:100%;margin-top:26px;padding:18px;background:#5effff;color:#000;border:none;border-radius:12px;font-weight:900;font-size:16px;cursor:pointer}
-@media(max-width:1050px){.hero{grid-template-columns:1fr;padding:40px 5%}.hero-left h1{font-size:38px}.phone{width:340px;height:680px}.products,.modal-box{grid-template-columns:1fr}.modal-box{min-height:auto}.m-main{height:300px}.nav{display:none}}
+@media(max-width:1050px){.hero{grid-template-columns:1fr;padding:40px 5%}.hero-left h1{font-size:38px}.phone{width:340px;height:680px}.products,.modal-box{grid-template-columns:1fr}.modal-box{min-height:auto}.m-main img{max-height:400px}.nav{display:none}}
 </style>
 </head>
 <body>
@@ -86,7 +87,7 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 </div>
 </div>
 
-<!-- MODAL LITE CON FOTOS -->
+<!-- MODAL LITE -->
 <div id="modal-lite" class="modal" onclick="if(event.target==this)closeModal('lite')">
 <div class="modal-box">
 <div class="m-left">
@@ -112,7 +113,7 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 </div>
 </div>
 
-<!-- MODAL PRO CON FOTOS -->
+<!-- MODAL PRO -->
 <div id="modal-pro" class="modal" onclick="if(event.target==this)closeModal('pro')">
 <div class="modal-box">
 <div class="m-left">
@@ -131,14 +132,14 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 <button class="close" onclick="closeModal('pro')">✕</button>
 <h3>Pelisplusgo Pro ★ Más Vendida</h3>
 <div class="m-price">$25</div>
-<p class="m-desc">Con multi-perfiles Alex, Sam, Mia, detalle de película con Hope, admin con analytics de streams, usuarios y revenue.</p>
+<p class="m-desc">Con multi-perfiles Alex, Sam, Mia, detalle de película con Hope, admin con analytics.</p>
 <ul class="m-list"><li>40 Pantallas Premium completas</li><li>Admin Dashboard con gráficas reales</li><li>Multi-perfiles + Watchlist + Favoritos</li><li>React Native + Flutter + Figma</li><li>Player HDR 4K + Soporte 12 meses</li></ul>
 <button class="m-buy">Comprar Pro - $25</button>
 </div>
 </div>
 </div>
 
-<!-- MODAL CINEMA CON FOTOS -->
+<!-- MODAL CINEMA -->
 <div id="modal-cinema" class="modal" onclick="if(event.target==this)closeModal('cinema')">
 <div class="modal-box">
 <div class="m-left">
@@ -157,8 +158,8 @@ body{background:#070a15;color:#fff;font-family:Inter,system-ui;overflow-x:hidden
 <button class="close" onclick="closeModal('cinema')">✕</button>
 <h3>Pelisplusgo Cinema+</h3>
 <div class="m-price" style="color:#c9a86a">$35</div>
-<p class="m-desc">Todo lo de Pro + Live TV con HBO, Sports, News 24, Trending in Cinemas, Continue Watching con barra de progreso y Chromecast.</p>
-<ul class="m-list"><li>60+ Pantallas Premium negocio</li><li>Live TV 12 canales + Contador viewers</li><li>Chromecast + Descargas offline</li><li>Super Admin Panel completo</li><li>Licencia comercial para reventa</li></ul>
+<p class="m-desc">Todo lo de Pro + Live TV con HBO, Sports, News 24, Trending y Chromecast.</p>
+<ul class="m-list"><li>60+ Pantallas Premium negocio</li><li>Live TV 12 canales</li><li>Chromecast + Descargas offline</li><li>Super Admin Panel completo</li><li>Licencia comercial para reventa</li></ul>
 <button class="m-buy" style="background:#c9a86a">Comprar Cinema+ - $35</button>
 </div>
 </div>
